@@ -60,6 +60,8 @@ Roadmap или карта знаний современного web-програ
       http://www.litres.ru/erik-frimen/izuchaem-html-xhtml-i-css-8511974/?lfrom=14517722
     + Справочник с примерами  
       http://htmlbook.ru/html
+    + Learn CSS Layout
+      http://learnlayout.com
 - **JS (JavaScript)** 
     + Хорошая книга для начинающих  
       https://karmazzin.gitbooks.io/eloquentjavascript_ru/content/  
@@ -100,6 +102,7 @@ Roadmap или карта знаний современного web-програ
 - https://redis.io  
 
 ## DevOps (сисадминство и настройка)
+- Книга [How Linux works](https://books.google.rs/books/about/How_Linux_Works.html?id=wOGUuoHUyAEC&printsec=frontcover&source=kp_read_button&redir_esc=y#v=onepage&q&f=false)
 Скринкасты о простой настройке linux серверов и деплое приложений, не исчерпывающая информация, но хороший старт:  
 - https://www.youtube.com/watch?v=aJLRnDJ2CVg
 - https://www.youtube.com/watch?v=vY9QNwX_IsY
