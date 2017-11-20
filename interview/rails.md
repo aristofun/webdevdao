@@ -22,7 +22,7 @@
  * http://rusrails.ru/
 
 
-2. Принципы ООП, понимание MVC, REST архитектуры
+### 2. Принципы ООП, понимание MVC, REST архитектуры
 
 Вопросы:
 
@@ -40,7 +40,7 @@
  * http://eax.me/rest/
 
 
-3. JavaScript, HTML, фронтенд
+### 3. JavaScript, HTML, фронтенд
 
 Вопросы:
 
@@ -60,7 +60,7 @@
 
  * https://learn.javascript.ru/
 
-4. Git
+### 4. Git
 
 Вопросы:
 
@@ -81,7 +81,7 @@
  * https://git-scm.com/docs
  * https://githowto.com/ru
 
-5. Умение писать SQL запросы.
+### 5. Умение писать SQL запросы.
 
 Вопросы:
 
