@@ -34,7 +34,8 @@
     <summary>25. Чем отличается include от extend?</summary>
     (https://habr.com/post/143483/)
  </details>
- 26. Чем отличается each от map ?
+ 
+ 26.Чем отличается each от map ?
 
 Где искать ответы:
 
