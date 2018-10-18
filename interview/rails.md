@@ -30,7 +30,12 @@
  22. Что такое ActiveJob? Когда его использовать?
  23. Что такое Asset Pipeline?
  24. Что такое переменная с одной @ и переменная с двумя @@ ?
- 25. Чем отличается include от extend? (https://habr.com/post/143483/)
+ <details>
+    <summary>25. Чем отличается include от extend?</summary>
+    (https://habr.com/post/143483/)
+ </details>
+ 
+ 26.Чем отличается each от map ?
 
 Где искать ответы:
 
