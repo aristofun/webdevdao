@@ -41,6 +41,8 @@ Roadmap или карта знаний современного web-програ
       https://goo.gl/jIKpgW
     + Для программистов от 1 года работы: Кент Бек "Test driven development" (есть перевод)  
       https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530
+    + Роберт К. Мартин "Чистый код. Создание, анализ и рефакторинг. Библиотека программиста" 
+      https://www.ozon.ru/context/detail/id/142429922/
 - **Проектирование и ООП**
     + Грэди Буч "ОО анализ и дизайн", **обязательна к прочтению**, основополагающая книга  
       http://www.helloworld.ru/texts/comp/other/oop/ch01.htm  
@@ -62,6 +64,7 @@ Roadmap или карта знаний современного web-програ
       http://www.litres.ru/erik-frimen/izuchaem-html-xhtml-i-css-8511974/?lfrom=14517722
     + Справочник с примерами  
       http://htmlbook.ru/html
+      https://devdocs.io/
     + Learn CSS Layout
       http://learnlayout.com
 - **JS (JavaScript)** 
@@ -80,18 +83,24 @@ Roadmap или карта знаний современного web-програ
     + Коллекция отличных скринкастов (частично устаревшая)
       http://railscasts.com 
     + Онлайн-интенсив «Хорошего программиста»
-      https://goo.gl/w5BZkM  
+      https://goo.gl/w5BZkM
+    + Онлайн-справочник всех языков программирования
+      https://devdocs.io/rails~5.2/
+      https://devdocs.io/ruby~2.5/
 - **Python/Django**  
   Среди питонистов нет единства в том, какие ресурсы считать лучшими, поэтому ниже ссылки с наиболее авторитетными мнениями:  
   + https://www.quora.com/Which-is-the-best-book-for-learning-python-for-absolute-beginners-on-their-own  
   + http://www.codepancake.com/5-python-books-for-beginners/  
   + https://stackoverflow.com/questions/4048973/whats-the-best-way-to-start-learning-django  
   + https://www.quora.com/What-are-the-resources-to-learn-Django    
+  + https://devdocs.io/python~3.7/
+  
 - **NodeJS**  
   Хороших курсов и книг практически нет (при выходе, они сразу устаревают), основа работы с нодой — хорошее знание JavaScript (выше ссылки) + практический опыт работы с ним (знание лучших практик и приемов).  
   + https://www.quora.com/What-is-the-best-Node-js-course-online  
-  + https://www.quora.com/What-are-the-best-resources-for-learning-Node-js  
-- **PHP** 
+  + https://www.quora.com/What-are-the-best-resources-for-learning-Node-js
+  + https://devdocs.io/node/
+- **PHP**
   Учить пхп мы не советуем вообще, поэтому приведем только одну ссылку, которую вы должны изучать постоянно, если все-таки отважились на этот отчаянный шаг:  
   + http://www.phptherightway.com  
 
@@ -101,7 +110,8 @@ Roadmap или карта знаний современного web-програ
 - https://ru.wikipedia.org/wiki/Реляционная_база_данных  
 - https://www.postgresql.org  
 - https://ru.wikipedia.org/wiki/NoSQL  
-- https://redis.io  
+- https://redis.io
+- https://www.w3schools.com/sql/default.asp
 
 ## DevOps (сисадминство и настройка)
 - Книга [How Linux works](https://books.google.rs/books/about/How_Linux_Works.html?id=wOGUuoHUyAEC&printsec=frontcover&source=kp_read_button&redir_esc=y#v=onepage&q&f=false)
@@ -111,6 +121,10 @@ Roadmap или карта знаний современного web-програ
 - https://www.youtube.com/watch?v=tQLpAefAKuA
 
 ---
+
+## Изучение Английского языка
+- Поиск перевода на английский в контексте для русский слов, выражений и идиом
+  http://context.reverso.net
 
 # PS
 
