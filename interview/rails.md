@@ -33,21 +33,20 @@
  25. Чем отличается include от extend? Что такое prepend?
           <details>
              <summary>Ответ</summary>
-             https://habr.com/post/143483/
-             https://inet777.ru/comments/8436/metod-module-prepend-v-ruby-2
-          </details>
-  
-  
-  26\. Чем отличается each от map ?<br>
-  27\. В чем разница между процессом и потоком?<br>
-  28\. Объяснить, что такое кеширование?<br>
-  29\. Представьте, что есть огромная табл. Users. Как можно перебрать ее элементы максимально быстро?
+                https://habr.com/post/143483/
+                https://inet777.ru/comments/8436/metod-module-prepend-v-ruby-2
+             </details>
+             
+  26. Чем отличается each от map ?<br>
+  27. В чем разница между процессом и потоком?<br>
+  28. Объяснить, что такое кеширование?<br>
+  29. Представьте, что есть огромная табл. Users. Как можно перебрать ее элементы максимально быстро?
           <details>
               <summary>Ответ</summary>
-              https://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each
-          </details>
+                https://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each
+              </details>
    
-  30\. Куда быстрее добавить элемент в массиве(хеше) в середину или в конец?
+  30. Куда быстрее добавить элемент в массиве(хеше) в середину или в конец?
 
 Где искать ответы:
 
