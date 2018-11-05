@@ -191,6 +191,7 @@
 
  * https://git-scm.com/docs
  * https://githowto.com/ru
+ * https://learn.javascript.ru/screencast/git
 
 ### 8. Умение писать SQL запросы.
 
