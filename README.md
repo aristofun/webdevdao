@@ -67,13 +67,17 @@ Roadmap или карта знаний современного web-програ
       https://devdocs.io/
     + Learn CSS Layout
       http://learnlayout.com
+    + Интерактивные курсы
+      https://htmlacademy.ru/courses
 - **JS (JavaScript)** 
     + Хорошая книга для начинающих  
       https://karmazzin.gitbooks.io/eloquentjavascript_ru/content/  
       http://eloquentjavascript.net
     + Хорошая книга для продолжающих  
       https://github.com/getify/You-Dont-Know-JS  
-
+    + Современный учебник Javascript
+      rus: https://learn.javascript.ru/
+      enu: https://javascript.info/ 
 
 ## Backend
 
