@@ -1,5 +1,8 @@
-# Вопросы по Ruby
+# Вопросы по Ruby с собеседований
 
+1. Что такое массив? хэш? строки? числа? время?
+1. Какие типы данных бывают в ruby?
+1. Какие структуры есть в ruby?
 1. Что такое `loop`, `while`, `map`, `each`?
 
     <details>
@@ -20,6 +23,7 @@
       http://queirozf.com/entries/ruby-map-each-collect-inject-reject-select-quick-reference
     </details>
 
+1. Чем отличается `each` от `map` ?
 1. Какие еще циклы вы знаете?
 
     <details>
@@ -46,7 +50,7 @@
       http://rubycode.ru/ruby/osnovy/54-oblast-vidimosti-i-tipy-obektov.html
     </details>
 
-1. Что такое переменная с одной @ и переменная с двумя @@?
+1. Что такое переменная с одной `@` и переменная с двумя `@@`?
 
     <details>
       <summary>Ответ</summary>
@@ -56,7 +60,7 @@
       Переменные класса `@@variable` — начинаются с двух символов `@`. Их область видимости — класс в котором они определены и все экземпляры данного класса.
     </details>
 
-1. Чем require отличается от require_relative?
+1. Чем `require` отличается от `require_relative`?
 
     <details>
       <summary>Ответ</summary>
@@ -85,4 +89,3 @@
 1. Какие есть способы вызова методов в ruby?
 1. Что такое `proc`, `lambda`, `block`? И какие отличия есть между ними?
 1. Многопоточность в ruby?
-1. Какие структуры есть в ruby?
