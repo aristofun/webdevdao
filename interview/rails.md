@@ -54,7 +54,36 @@
 1. Что такое валидации? Как написать свои валидации? Для чего нужны валидации? Где применяются валидации? Примеры Валидаций.
 1. Есть ли у Rails механизм, который отслеживает изменения в базе данных?
 1. Что такое `Rack`?
+
+    <details>
+      <summary>Ответ</summary>
+      https://www.8host.com/blog/kratkij-obzor-veb-serverov-dlya-prilozhenij-ruby/
+
+      Rack это промежуточное программное обеспечение, оно делит входящие HTTP-запросы на различные этапы, затем обрабатывает их по частям, после чего посылает ответ веб-приложения (контроллера).
+
+      Программа Rack  состоит из двух отдельных компонентов: обработчика и адаптера, с помощью которых происходит обмен данными между веб-серверами и приложениями (фреймворками).
+
+      Какие серверы есть:
+
+      * Phusion Passenger
+      * Puma
+      * Thin
+      * Unicorn
+
+      Как устроен Rack
+
+      * https://www.youtube.com/watch?v=NJ-ilQMsqMs
+      * https://www.youtube.com/watch?v=MHYMObuEahc
+      * https://www.youtube.com/watch?v=DzrVB1-KyTU
+    </details>
+
 1. Что такое `partial` и для чего используются?
+
+    <details>
+      <summary>Ответ</summary>
+      partial — это кусочек кода, который можно вынести в отдельный темплейт, для удобства использования и для использования в других представлениях.
+    </details>
+
 1. Что такое Haml, Slim? Какие плюсы на ваш взгляд, их использования?
 
     <details>
@@ -101,9 +130,16 @@
 
     <details>
       <summary>Ответ</summary>
-      https://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each
-    </details>
+      Быстро можно перебрать с помощью find_each, стандартно по 1000 записей.
 
+      * `batch_size` — сколько обрабатывать записей за раз
+      * `start` — с какого id к примеру продолжить работу
+      * `finish` — может использоваться совместно с `start`, к примеру чтобы выслать письма только пользователям с первичным ключом от 2000 до 10000:
+
+      https://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each
+
+      http://rusrails.ru/active-record-query-interface
+    </details>
 
 Где искать ответы:
 
