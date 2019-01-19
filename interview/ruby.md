@@ -153,7 +153,50 @@
       http://findnerd.com/list/view/How-to-create-getter-and-setter-methods-in-Ruby/13615/
     </details>
 
-1. Что такое `attr_reader, `attr_writer`, `attr_accessor`?
+1. Что такое `attr_reader`, `attr_writer`, `attr_accessor`?
+
+    <details>
+      <summary>Ответ</summary>
+      Все классы наследуют методы `Module`.
+      
+      `attr_reader`, `attr_writer`, `attr_accessor` являются его методами.
+
+      Что делают эти методы внутри класса?
+
+      `attr_reader` создаёт переменную экземпляра и метод-геттер, который возвращает её значение
+
+      Эти записи эквивалентны:
+
+      ```
+      attr_reader :name
+
+      def name
+        @name
+      end
+      ```
+
+      `attr_writer` создаёт метод-сеттер, позволяющий изменять переменную экземпляра.
+
+      Эти записи эквивалентны:
+
+      ```
+      attr_writer :name
+
+      def name=(name)
+        @name = name
+      end
+      ```
+
+      `attr_accessor` объединяет функционал `attr_reader` и `attr_writer`.
+
+      http://ruby-doc.org/core-2.5.1/Module.html#method-i-attr_reader
+
+      http://ruby-doc.org/core-2.5.1/Module.html#method-i-attr_writer
+
+      http://ruby-doc.org/core-2.5.1/Module.html#method-i-attr_accessor
+    </details>
+
+
 1. Что означает ключевое слово `self`?
 
     <details>
