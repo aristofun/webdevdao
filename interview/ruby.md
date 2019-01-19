@@ -196,7 +196,6 @@
       http://ruby-doc.org/core-2.5.1/Module.html#method-i-attr_accessor
     </details>
 
-
 1. Что означает ключевое слово `self`?
 
     <details>
