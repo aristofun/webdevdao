@@ -22,6 +22,7 @@
 
     <details>
       <summary>Ответ</summary>
+      
       * web-console
       * debugger
       * byebug
@@ -32,6 +33,7 @@
 
     <details>
       <summary>Ответ</summary>
+      
       * Rubymine
       * Vscode
       * Sublime
@@ -42,6 +44,7 @@
 
     <details>
       <summary>Ответ</summary>
+      
       * jira,
       * pivotaltrecker
       * redmine
