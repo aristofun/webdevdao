@@ -16,7 +16,7 @@ Roadmap или карта знаний современного web-програ
 
     + МакКонелл "Анализ алгоритмов" отличная обучающая книга для понимания основ
 
-      http://www.technosphera.ru/lib/book/8/
+      http://www.technosphera.ru/lib/book/8
 
       https://books.google.com/books?id=mW4S0AHFKrAC&source=gbs_book_other_versions
 
