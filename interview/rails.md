@@ -138,6 +138,16 @@
 1. Что лучше выбрать `has_many :through` и `has_and_belongs_to_many`?
 1. Что такое `pluralize` и как он может быть полезен на проекте?
 1. Что такое `i18n` (интернационазиция)?
+
+    <details>
+      <summary>Ответ</summary>
+      Гем, поставляемый с Ruby on Rails (начиная с Rails 2.2), представляет простой и расширяемый фреймворк для перевода приложения на язык, отличный от английского.
+
+      Rails автоматически добавляет все файлы `.rb` и `.yml` из директории `config/locales` к пути загрузки переводов.
+
+      http://rusrails.ru/rails-internationalization-i18n-api
+    </details>
+
 1. Что такое `dependent` связь?
 1. Что такое `t.references`?
 1. Что такое exception и от чего наследуется?
