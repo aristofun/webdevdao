@@ -199,6 +199,23 @@
       http://rusrails.ru/active-record-query-interface
     </details>
 
+1. Как без рендеринга шаблона сказать мобильному приложению, что у него нет прав на просмотр определённого контента одной строкой в контроллере?
+
+    <details>
+      <summary>Ответ</summary>
+      ```
+      head :forbidden
+      ```
+
+      или
+
+      ```
+      render status: 403
+      ```
+
+      https://guides.rubyonrails.org/layouts_and_rendering.html
+    </details>
+
 Где искать ответы:
 
 * http://guides.rubyonrails.org/
