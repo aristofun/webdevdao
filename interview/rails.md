@@ -89,7 +89,7 @@
       * Thin
       * Unicorn
 
-      Как устроен Rack
+      [Как устроен Rack](https://gist.github.com/Integralist/8341704)
 
       * https://www.youtube.com/watch?v=NJ-ilQMsqMs
       * https://www.youtube.com/watch?v=MHYMObuEahc
