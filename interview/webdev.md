@@ -16,6 +16,7 @@
 
     <details>
       <summary>Ответ</summary>
+
       * HyperText Transfer Protocol
 
       * HyperText Transfer Protocol Secure — расширение протокола HTTP для поддержки шифрования в целях повышения безопасности.
