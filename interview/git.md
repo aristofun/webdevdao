@@ -32,6 +32,7 @@
 
     <details>
       <summary>Ответ</summary>
+
       ```
       git clone git@github.com:username/project.git
       ```
@@ -108,6 +109,7 @@
 
     <details>
       <summary>Ответ</summary>
+
       ```
       git pull --rebase
       ```
@@ -117,6 +119,7 @@
 
     <details>
       <summary>Ответ</summary>
+
       ```
       git add <cписок файлов>
       git commit -m "Commit message"
