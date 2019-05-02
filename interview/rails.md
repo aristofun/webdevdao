@@ -230,6 +230,48 @@
       http://rusrails.ru/active-record-associations#dopolnitelnye-metody-stolbtsov
     </details>
 
+1. Что такое полиморфные связи?
+
+    <details>
+      <summary>Ответ</summary>
+      Особый вид связи, при которой модель может принадлежать сразу нескольким моделям.
+
+      Например, картинку можно добавлять к статье, комментарию, пользователю.
+
+      ```rb
+      class Picture < ApplicationRecord
+        belongs_to :imageable, polymorphic: true
+      end
+
+      class Article < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
+
+      class Comment < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
+
+      class User < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
+      ```
+
+      При этом картинка сохраняет в себе имя класса и `id` объекта, которому она принадлежит. В приведённом примере у картинки имеются атрибуты `imageable_id` и `imageable_type`, это возможно благодаря миграции:
+
+      ```rb
+      class CreatePictures < ActiveRecord::Migration[5.2]
+        def change
+          create_table :pictures do |t|
+            t.references :imageable, polymorphic: true, index: true
+          end
+        end
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations#polymorphic-associations
+
+    </details>
+
 1. Что такое `pluralize` и как он может быть полезен на проекте?
 1. Что такое `i18n` (интернационазиция)?
 
