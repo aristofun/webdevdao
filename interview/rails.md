@@ -165,7 +165,57 @@
     </details>
 
 1. Какие связи для связывания моделей в приложении Rails вы знаете?
-1. Привести примеры использования `has_many`, `belongs_to`, `many_to_many`, `has_one`, `has_many :through`?
+
+    <details>
+      <summary>Ответ</summary>
+      Rails поддерживает шесть типов связей:
+
+      * `belongs_to`
+      * `has_one`
+      * `has_many`
+      * `has_many :through`
+      * `has_one :through`
+      * `has_and_belongs_to_many`
+
+      http://rusrails.ru/active-record-associations#tipy-svyazey
+    </details>
+
+1. Привести примеры использования `has_many`, `belongs_to`, `has_and_belongs_to_many`, `has_one`, `has_many :through`?
+
+    <details>
+      <summary>Ответ</summary>
+      Фильм имеет имеет множество сезонов, сезон принадлежит фильму и имеет множество серий. У каждого фильма может быть только один официальный сайт. В каждом фильме снимается множество актёров, при этом каждый актёр снимается в разных фильмах:
+
+      ```rb
+      class Film < ApplicationRecord
+        has_many :seasons
+        has_many :episodes, through: :seasons
+
+        has_one :official_site
+        has_and_belongs_to_many :actors
+      end
+
+      class Season < ApplicationRecord
+        belongs_to :film
+        has_many :episodes
+      end
+
+      class Episode < ApplicationRecord
+        belongs_to :season
+      end
+
+      class OfficialSite < ApplicationRecord
+        belongs_to :film
+      end
+
+      class Actor < ApplicationRecord
+        has_and_belongs_to_many :films
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations#tipy-svyazey
+    </details>
+
 1. Что лучше выбрать `has_many :through` или `has_and_belongs_to_many`?
 
     <details>
@@ -193,7 +243,42 @@
     </details>
 
 1. Что такое `dependent` связь?
+
+    <details>
+      <summary>Ответ</summary>
+
+      Опция `:dependent` указывает, что необходимо сделать с зависимой моделью (моделями) при удалении текущей модели. В зависимости от типа связи может принимать значения:
+
+      * `:delete` — связанные объекты будут удалены прямо из базы данных без вызова метода `destroy`, т.е. без соответствующих коллбэков
+      * `:delete_all` — см. `:delete`
+      * `:destroy` — будет вызван `destroy` на связанных объектах
+      * `:nullify` — внешний ключ будет установлен `NULL`
+      * `:restrict_with_error` — при наличии связанного объекта вызовет ошибку
+      * `:restrict_with_exception` — при наличии связанного объекта вызовется исключение
+
+
+      http://rusrails.ru/active-record-associations
+    </details>
+
 1. Что такое `t.references`?
+
+    <details>
+      <summary>Ответ</summary>
+      Столбец таблицы в миграции, указывающий на принадлежность к другой таблице. Например, книга принадлежит автору:
+
+      ```rb
+      class CreateBooks < ActiveRecord::Migration[5.2]
+        def change
+          create_table :books do |t|
+            t.references :author
+          end
+        end
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations
+    </details>
+
 1. Что такое exception и от чего наследуется?
 1. Как сгенерировать модель, конторллер, представление (вьюху)
 1. Что такое scaffolding? Зачем он используется и где применяется?
