@@ -66,11 +66,118 @@
     </details>
     
 1. Что такое синглтон метод?
+
+    <details>
+      <summary>Ответ</summary>
+      Синглтон метод (singleton method) - метод, принадлежащий только одному объекту (экземпляру класса или классу). Другие экземпляры этого же класса (или классы) к этому методу доступа не имеют.
+           
+      ```rb
+      class A
+        def say_something
+          "Something"
+        end
+      end
+      
+      foo = A.new
+      
+      bar = A.new
+      
+      # присваиваем объекту 'foo' отдельный метод (синглтон) 
+      def foo.laugh
+        "HAHAHAHA!"
+      end
+      
+      foo.say_something
+      => "Something"
+      
+      bar.say_something
+      => "Something"
+      
+      foo.laugh
+      => "HAHAHAHA!"
+      
+      bar.laugh
+      => NoMethodError (undefined method `laugh' for #<A:0x0000559bd8412138>)
+      ```
+      Подробнее [тут](https://habr.com/ru/post/143990/)
+    </details>
+
 1. Что такое ActiveJob? Когда его использовать?
+    <details>
+      <summary>Ответ</summary>
+      Active Job - это фреймворк для объявления заданий и их запуска на разных бэкендах очередей. Эти задания могут быть чем угодно: от регулярно запланированных чисток до списаний с карт или рассылок. 
+      В общем, всем, что может быть выделено в небольшие работающие части и запускаться параллельно.
+      
+      Имеет встроеные адаптеры для планировщиков фоновых задач:
+      
+      * Sidekiq
+      * Resque
+      * Delayed Job
+      * и т.д.
+
+      [Rails docs en](https://edgeguides.rubyonrails.org/active_job_basics.html)
+      
+      [Rails docs ru](http://rusrails.ru/active_job_basics)
+    </details>
+
 1. Что такое Asset Pipeline?
+    <details>
+      <summary>Ответ</summary>
+      Asset Pipeline (файлопровод) - фреймворк для соединения и минимизации, или сжатия ассетов JavaScript и CSS. 
+      Он также добавляет возможность писать эти ассеты на других языках и препроцессорах, таких как CoffeeScript, Sass и ERB. 
+      Это позволяет автоматически комбинировать ассеты приложения с ассетами других гемов.
+      
+      Первой особенностью файлопровода является соединение ассетов, что может уменьшить количество запросов, необходимых браузеру для отображения страницы. 
+      Браузеры ограничены в количестве запросов, которые они могут выполнить параллельно, поэтому меньшее количество запросов может означать более быструю загрузку вашего приложения.
+      
+      Второй особенностью файлопровода является минимизация или сжатие ассетов. Для файлов CSS это выполняется путем удаления пробелов и комментариев. Для JavaScript могут быть применены более сложные процессы. Можно выбирать из набора встроенных опций или определить свои.
+
+      Третьей особенностью файлопровода является то, что он позволяет писать эти ассеты на языке более высокого уровня с дальнейшей прекомпиляцией до фактического ассета. Поддерживаемые языки по умолчанию включают Sass для CSS, CoffeeScript для JavaScript и ERB для обоих.
+     
+      [Rails docs en](https://guides.rubyonrails.org/asset_pipeline.html)
+      
+      [Rails docs ru](http://rusrails.ru/asset-pipeline)
+    </details>
 1. Что такое serializer и для чего он нужен? Где применяется? В чем его основная задача?
+    <details>
+      <summary>Ответ</summary>
+      Сериализация (serialization) - процесс перевода каких-либо структур данных в последовательность битов.
+      Обратный процесс называется "десериализация" (deserialization).
+      
+      Сериализация используется для передачи объектов по сети и сохранения их в файлы. Например: сериализация заполненого объекта в XML-документ с последующей передачей документа 
+      по HTTP или протоколам электронной почты.
+      
+      Также часто используется для преобразования информации в формат JSON.
+      
+      В Rails интерфейс базовой сериализации представлен модулем `ActiveModel::Serialization`
+      Вам необходимо объявить хэш, содержащий атрибуты, которые вы хотите сериализовать. Атрибуты должны быть строками, не символами.
+
+      Что касается JSON, то Active Model также предоставляет модуль `ActiveModel::Serializers::JSON` для сериализации/десериализации JSON.
+
+      [Статья в wiki о сериализации](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F)
+      
+      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      
+      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+    </details>
+
 1. Что такое presenter и для чего он нужен? Где применяется? В чем его основная задача?
+    <details>
+      <summary>Ответ</summary>
+
+      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      
+      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+    </details>
+      
 1. Что такое валидации? Как написать свои валидации? Для чего нужны валидации? Где применяются валидации? Примеры Валидаций.
+    <details>
+      <summary>Ответ</summary>
+
+      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      
+      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+    </details>
 1. Есть ли у Rails механизм, который отслеживает изменения в базе данных?
 1. Что такое `Rack`?
 
