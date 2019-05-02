@@ -298,6 +298,41 @@
       http://rusrails.ru/active-record-query-interface
     </details>
 
+1. Как можно решить проблему N+1 в Rails?
+
+    <details>
+      <summary>Ответ</summary>
+      Указанный код выполнит 10 + 1 запрос в БД (первый запрос загрузит 10 клиентов, а затем для каждого клиента будет сделано по запросу).
+
+      ```rb
+      clients = Client.limit(10)
+
+      clients.each do |client|
+        puts client.address.postcode
+      end
+      ```
+
+      Проблему N+1 можно решить при помощи метода `includes`, при этом Active Record обеспечивает то, что все указанные связи загружаются с использованием минимально возможного количества запросов:
+
+      ```rb
+      clients = Client.includes(:address).limit(10)
+
+      clients.each do |client|
+        puts client.address.postcode
+      end
+      ```
+
+      В данном случае будет сделано всего два запроса:
+
+
+      ```sql
+      SELECT * FROM clients LIMIT 10
+      SELECT addresses.* FROM addresses WHERE (addresses.client_id IN (1,2,3,4,5,6,7,8,9,10))
+      ```
+
+      http://rusrails.ru/active-record-query-interface#neterpelivaya-zagruzka-svyazey
+    </details>
+
 1. Как без рендеринга шаблона сказать мобильному приложению, что у него нет прав на просмотр определённого контента одной строкой в контроллере?
 
     <details>
