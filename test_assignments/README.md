@@ -20,20 +20,24 @@
 
 [RoR: JSON API с экшенами для блога](json_api_for_blog.md)
 
+[JSON API: прототип для системы бронирования авто](prototype_for_car_hiring_system.md)
+
 [RoR: meals delivery service](meals_delivery_service.md)
 
 [RoR: выгрузка тестового прайс-листа и создание карточек для онлайн-магазина](price_list_export_algorithms_for_marketplace.md)
 
-[JSON API: прототип для системы бронирования авто](prototype_for_car_hiring_system.md)
-
 [RoR + Ember: API для сайта продажи/аренды недвижимости](rails_api_for_real_estate_site.md)
-
-[Ruby: функция Checkout для магазина](shop_with_checkout.md)
 
 [RoR + Ember: простой трекер задач](simple_to_do_list.md)
 
 [RoR: таск-менеджер с функцией аутентификации](task_manager_with_authentication.md)
 
+[RoR: панель администратора магазина](shop_dashboard.md)
+
+[Ruby: функция Checkout для магазина](shop_with_checkout.md)
+
 [Ruby: тотализатор](totalizator.md)
 
 [Ruby: сервис статистики видеопросмотров](video_view_statistics_service.md)
+
+[Ruby: сервис проверки кредитных карт](credit_card_checker.md)
