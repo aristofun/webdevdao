@@ -4,9 +4,9 @@
 
 Дана таблица `users` с полями `id`, `group_id`.
 
-```
-create temp table users(id bigserial, group_id bigint);
-insert into users(group_id) values (1), (1), (1), (2), (1), (3);
+```sql
+CREATE TEMP TABLE users(id bigserial, group_id bigint);
+INSERT INTO users(group_id) VALUES (1), (1), (1), (2), (1), (3);
 ```
 
 В этой таблице, упорядоченной по `id` необходимо:
