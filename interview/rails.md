@@ -139,7 +139,6 @@
       [Rails docs ru](http://rusrails.ru/asset-pipeline)
     </details>
 1. Что такое serializer и для чего он нужен? Где применяется? В чем его основная задача?
-
     <details>
       <summary>Ответ</summary>
       Сериализация (serialization) - процесс перевода каких-либо структур данных в последовательность битов.
@@ -455,29 +454,6 @@
     </details>
 
 1. Что такое `pluralize` и как он может быть полезен на проекте?
-
-    <details>
-      <summary>Ответ</summary>
-
-      `pluralize` - хелпер-метод, позволяющий сгенерировать множественное число к необходимому слову.
-      В качестве аргументов принимает количество, форму единственного числа и, опционально, форму множественного числа `count, singular, plural = nil`
-          
-      ```rb
-      pluralize(1, 'person')
-      # => 1 person
-      
-      pluralize(2, 'person')
-      # => 2 people
-      
-      pluralize(3, 'person', 'users')
-      # => 3 users
-      
-      pluralize(0, 'person')
-      # => 0 people
-      ```
-      [Rails docs en](https://apidock.com/rails/ActionView/Helpers/TextHelper/pluralize)      
-    </details>
-
 1. Что такое `i18n` (интернационализация)?
 
     <details>
