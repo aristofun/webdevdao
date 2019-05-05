@@ -442,6 +442,15 @@
     </details> 
 
 1. Что такое scaffolding? Зачем он используется и где применяется?
+  
+    <details>
+      <summary>Ответ</summary>
+      Rails Scaffold - встроенный генератор, который запускает другие генераторы Rails, чтобы одной командой сгенерировать набор из модели, контроллера, вьюх, тестов, миграций и т.д.
+      Предоставляется возможность создавать собственные предустановки генерации.
+      
+      [Rails docs en](https://guides.rubyonrails.org/v3.2/getting_started.html#getting-up-and-running-quickly-with-scaffolding)
+    </details>
+ 
 1. Как реализовано кеширование в рельсах?
 
     <details>
