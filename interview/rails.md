@@ -164,21 +164,95 @@
 1. Что такое presenter и для чего он нужен? Где применяется? В чем его основная задача?
     <details>
       <summary>Ответ</summary>
+      Presenter - паттерн проектирования, простой класс (в Rails), использующийся для вынесения какой-либо логики по обработке моделей из слоя контроллеров и слоя представлений.
 
-      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      Например:
       
-      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+      ```rb
+      module Posts
+        class IndexPresenter
+          # здесь как раз и разбивается логика шаблона и контроллера, 
+          # перенесите сюда логику из контроллеров
+          def posts
+            Posts.all
+          end
+     
+          def authors
+            Authors.all
+          end
+     
+          def post_published_count
+            Post.published_count
+          end
+        end
+      end
+      ```
+      Так будет выглядеть экшн `index` в контроллере
+      
+      ```rb
+      def index
+        @presenter = Posts::IndexPresenter.new
+      end
+      ```
+      
+      Так это будет представлоно во `view`
+      
+      ```rb
+       <p>
+         Всего опубликовано: <%= @presenter.published_count %>
+       </p>
+       <%= @presenter.authors # проход по массиву и отображение%>
+      ```
+      
+      Подробнее [тут](https://kpumuk.info/ruby-on-rails/simplifying-your-ruby-on-rails-code/)
+
+      Еще можно [здесь](http://blog.rukomoynikov.ru/dekorator-prezenter-helper-v-ruby/)
+   
     </details>
       
 1. Что такое валидации? Как написать свои валидации? Для чего нужны валидации? Где применяются валидации? Примеры Валидаций.
     <details>
       <summary>Ответ</summary>
+      Валидации используются, чтобы быть уверенными, что только проверенные данные сохраняются в вашу базу данных. 
+      Например, для вашего приложения может быть важно, что каждый пользователь предоставил валидный электронный и почтовый адреса. 
 
-      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      Валидации на уровне модели - наилучший способ убедиться, что в базу данных будут сохранены только валидные данные. Они не зависят от базы данных, не могут быть обойдены конечными пользователями и удобны в тестировании и обслуживании. 
+      Rails представляет простоту в обслуживании, представляет встроенные хелперы для общих нужд, а также позволяет создавать свои собственные методы валидации.
       
-      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+      Пример простейшей валидации передачу в модель `Person` данных из поля `name`:
+      
+      ```rb
+      class Person < ApplicationRecord
+        validates :name, presence: true
+      end
+    
+      Person.create(name: "John Doe").valid? # => true
+      Person.create(name: nil).valid? # => false
+      ```
+
+      Разработчик так же в праве написать свои собственные правила валидации, которые будут располагаться в каталоге `app/validators`.
+      
+      Пример кастомной валидации `email` по определенному пользователем шаблону: 
+     
+      ```rb
+      class EmailValidator < ActiveModel::EachValidator
+        def validate_each(record, attribute, value)
+          unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+            record.errors[attribute] << (options[:message] || "is not an email")
+          end
+        end
+      end
+ 
+      class Person < ApplicationRecord
+        validates :email, presence: true, email: true
+      end
+      ```
+      [Rails docs ru](http://rusrails.ru/active-record-validations)
+      
+      [Rails docs en](https://guides.rubyonrails.org/active_record_validations.html)      
     </details>
 1. Есть ли у Rails механизм, который отслеживает изменения в базе данных?
+
 1. Что такое `Rack`?
 
     <details>
@@ -272,7 +346,18 @@
     </details>
 
 1. Какие связи для связывания моделей в приложении Rails вы знаете?
+    <details>
+      <summary>Ответ</summary>
+
+      * belongs_to
+      * has_one
+      * has_many
+      * has_many :through
+      * has_and_belongs_to_many
+    </details>
+      
 1. Привести примеры использования `has_many`, `belongs_to`, `many_to_many`, `has_one`, `has_many :through`?
+
 1. Что лучше выбрать `has_many :through` или `has_and_belongs_to_many`?
 
     <details>
@@ -302,7 +387,38 @@
 1. Что такое `dependent` связь?
 1. Что такое `t.references`?
 1. Что такое exception и от чего наследуется?
-1. Как сгенерировать модель, конторллер, представление (вьюху)
+1. Как сгенерировать модель, контрoллер, представление (вьюху)
+    
+    <details>
+      <summary>Ответ</summary>
+      
+      В Rails для создания моделей, контроллеров и представлений используется консольная команда `rails generate` (или `rails g`) с необходимыми ключами. 
+      Находиться при этом нужно в папке проекта.
+      Герераторы в Rails сильно упрощают создание проекта, т.к. нет необходимости создавать каждый файл вручную.
+            
+      Например создание контроллера для модели "Greetings" в котором будет экшн `hello`:
+      
+      ```rb
+      $ bin/rails generate controller Greetings hello
+           create  app/controllers/greetings_controller.rb
+            route  get "greetings/hello"
+           invoke  erb
+           create    app/views/greetings
+           create    app/views/greetings/hello.html.erb
+           invoke  test_unit
+           create    test/controllers/greetings_controller_test.rb
+           invoke  helper
+           create    app/helpers/greetings_helper.rb
+           invoke  assets
+           invoke    coffee
+           create      app/assets/javascripts/greetings.coffee
+           invoke    scss
+           create      app/assets/stylesheets/greetings.scss
+      ```
+    </details>
+     
+      [Rails docs en](https://guides.rubyonrails.org/command_line.html#rails-generate)      
+
 1. Что такое scaffolding? Зачем он используется и где применяется?
 1. Как реализовано кеширование в рельсах?
 1. Представьте, что есть огромная табл. `users`. Как можно перебрать ее элементы максимально быстро?
