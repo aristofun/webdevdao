@@ -346,80 +346,55 @@
     </details>
 
 1. Какие связи для связывания моделей в приложении Rails вы знаете?
+
     <details>
       <summary>Ответ</summary>
+      Rails поддерживает шесть типов связей:
 
-      * belongs_to
-      * has_one
-      * has_many
-      * has_one :through    
-      * has_many :through
-      * has_and_belongs_to_many
+      * `belongs_to`
+      * `has_one`
+      * `has_many`
+      * `has_many :through`
+      * `has_one :through`
+      * `has_and_belongs_to_many`
+
+      http://rusrails.ru/active-record-associations#tipy-svyazey
     </details>
-      
-1. Привести примеры использования `has_many`, `belongs_to`, `many_to_many`, `has_one`, `has_many :through`?
+
+1. Привести примеры использования `has_many`, `belongs_to`, `has_and_belongs_to_many`, `has_one`, `has_many :through`?
 
     <details>
       <summary>Ответ</summary>
+      Фильм имеет имеет множество сезонов, сезон принадлежит фильму и имеет множество серий. У каждого фильма может быть только один официальный сайт. В каждом фильме снимается множество актёров, при этом каждый актёр снимается в разных фильмах:
 
-      * `belongs_to` - декларирует, что экземпляр одной модели принадлежит другой. Например: модель `Book` принадлежит модели `Author` 
-      * `has_one` - связь `one-to-one` декларирует, что каждый экземпляр модели содержит или обладает одним экземпляром другой модели. Например: модель `User` имеет только один `Account` 
-      * `has_many` - связь `many-to-many` декларирует, что каждый экземпляр модели имеет ноль или более экземпляров другой модели. Например: модели `Author` принадлежит некое количество `Book`
-      * `has_many :through` - используется для настройки соединения `many-to-many` с другой моделью, указывает, что объявляющая модель может соответствовать нулю или более экземплярам другой модели через третью модель.
-      
-        Например поликлиникa, где пациентам (patients) дают направления (appointments) к врачам (physicians)
-      
-        ```rb
-        class Physician < ApplicationRecord
-          has_many :appointments
-          has_many :patients, through: :appointments
-        end
-        
-        class Appointment < ApplicationRecord
-          belongs_to :physician
-          belongs_to :patient
-        end
-        
-        class Patient < ApplicationRecord
-          has_many :appointments
-          has_many :physicians, through: :appointments
-        end
-        ```
-      * `has_one :through` - настраивает соединение `one-to-one` с другой моделью. Декларирует, что объявляющая модель может быть связана с одним экземпляром другой модели через третью модель. 
-      
-        Например, если каждый поставщик имеет один аккаунт, и каждый аккаунт связан с одной историей аккаунта, тогда модели могут выглядеть так:
-        
-        ```rb
-        class Supplier < ApplicationRecord
-          has_one :account
-          has_one :account_history, through: :account
-        end
-        
-        class Account < ApplicationRecord
-          belongs_to :supplier
-          has_one :account_history
-        end
-        
-        class AccountHistory < ApplicationRecord
-          belongs_to :account
-        end
-        ```
-      
-      * `has_and_belongs_to_many` создает прямое соединение многие-ко-многим с другой моделью, без промежуточной модели. Например, если ваше приложение включает сборки (assemblies) и детали (parts), где каждый узел имеет много деталей, и каждая деталь встречается во многих сборках, модели можно объявить таким образом:
-      
-        ```rb
-        class Assembly < ApplicationRecord
-          has_and_belongs_to_many :parts
-        end
-        
-        class Part < ApplicationRecord
-          has_and_belongs_to_many :assemblies
-        end
-        ```
-      
-      [Rails docs ru](http://rusrails.ru/active-record-associations)
-      
-      [Rails docs en](https://guides.rubyonrails.org/v5.2/association_basics.html) 
+      ```rb
+      class Film < ApplicationRecord
+        has_many :seasons
+        has_many :episodes, through: :seasons
+
+        has_one :official_site
+        has_and_belongs_to_many :actors
+      end
+
+      class Season < ApplicationRecord
+        belongs_to :film
+        has_many :episodes
+      end
+
+      class Episode < ApplicationRecord
+        belongs_to :season
+      end
+
+      class OfficialSite < ApplicationRecord
+        belongs_to :film
+      end
+
+      class Actor < ApplicationRecord
+        has_and_belongs_to_many :films
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations#tipy-svyazey
     </details>
 
 1. Что лучше выбрать `has_many :through` или `has_and_belongs_to_many`?
@@ -436,35 +411,58 @@
       http://rusrails.ru/active-record-associations#dopolnitelnye-metody-stolbtsov
     </details>
 
-1. Что такое `pluralize` и как он может быть полезен на проекте?
+1. Что такое полиморфные связи?
 
     <details>
       <summary>Ответ</summary>
+      Особый вид связи, при которой модель может принадлежать сразу нескольким моделям.
 
-      `pluralize` - хелпер-метод, позволяющий сгенерировать множественное число к необходимому слову.
-      В качестве аргументов принимает количество, форму единственного числа и, опционально, форму множественного числа `count, singular, plural = nil`
-          
+      Например, картинку можно добавлять к статье, комментарию, пользователю.
+
       ```rb
-      pluralize(1, 'person')
-      # => 1 person
-      
-      pluralize(2, 'person')
-      # => 2 people
-      
-      pluralize(3, 'person', 'users')
-      # => 3 users
-      
-      pluralize(0, 'person')
-      # => 0 people
+      class Picture < ApplicationRecord
+        belongs_to :imageable, polymorphic: true
+      end
+
+      class Article < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
+
+      class Comment < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
+
+      class User < ApplicationRecord
+        has_many :pictures, as: :imageable
+      end
       ```
-      
-      [Rails docs en](https://apidock.com/rails/ActionView/Helpers/TextHelper/pluralize)      
+
+      При этом картинка сохраняет в себе имя класса и `id` объекта, которому она принадлежит. В приведённом примере у картинки имеются атрибуты `imageable_id` и `imageable_type`, это возможно благодаря миграции:
+
+      ```rb
+      class CreatePictures < ActiveRecord::Migration[5.2]
+        def change
+          create_table :pictures do |t|
+            t.references :imageable, polymorphic: true, index: true
+          end
+        end
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations#polymorphic-associations
+
     </details>
-1. Что такое `i18n` (интернационазиция)?
+
+1. Что такое `pluralize` и как он может быть полезен на проекте?
+1. Что такое `i18n` (интернационализация)?
 
     <details>
       <summary>Ответ</summary>
-      Гем, поставляемый с Ruby on Rails (начиная с Rails 2.2), представляет простой и расширяемый фреймворк для перевода приложения на язык, отличный от английского.
+      Адаптация приложения к особенностям региона, в котором он будет использоваться.
+
+      Название `i18n` происходит от английского слова _internationalization_, между первой и последней буквами _i_ и _n_ 18 букв.
+
+      Гем `i18n`, поставляемый с Ruby on Rails (начиная с Rails 2.2), представляет простой и расширяемый фреймворк для перевода приложения на язык, отличный от английского, а также изменения формата даты, времени, валюты и т.д.
 
       Rails автоматически добавляет все файлы `.rb` и `.yml` из директории `config/locales` к пути загрузки переводов.
 
@@ -472,7 +470,42 @@
     </details>
 
 1. Что такое `dependent` связь?
+
+    <details>
+      <summary>Ответ</summary>
+
+      Опция `:dependent` указывает, что необходимо сделать с зависимой моделью (моделями) при удалении текущей модели. В зависимости от типа связи может принимать значения:
+
+      * `:delete` — связанные объекты будут удалены прямо из базы данных без вызова метода `destroy`, т.е. без соответствующих коллбэков
+      * `:delete_all` — см. `:delete`
+      * `:destroy` — будет вызван `destroy` на связанных объектах
+      * `:nullify` — внешний ключ будет установлен `NULL`
+      * `:restrict_with_error` — при наличии связанного объекта вызовет ошибку
+      * `:restrict_with_exception` — при наличии связанного объекта вызовется исключение
+
+
+      http://rusrails.ru/active-record-associations
+    </details>
+
 1. Что такое `t.references`?
+
+    <details>
+      <summary>Ответ</summary>
+      Столбец таблицы в миграции, указывающий на принадлежность к другой таблице. Например, книга принадлежит автору:
+
+      ```rb
+      class CreateBooks < ActiveRecord::Migration[5.2]
+        def change
+          create_table :books do |t|
+            t.references :author
+          end
+        end
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations
+    </details>
+
 1. Что такое exception и от чего наследуется?
 1. Как сгенерировать модель, контрoллер, представление (вьюху)
     
@@ -552,6 +585,41 @@
       https://apidock.com/rails/ActiveRecord/Batches/ClassMethods/find_each
 
       http://rusrails.ru/active-record-query-interface
+    </details>
+
+1. Как можно решить проблему N+1 в Rails?
+
+    <details>
+      <summary>Ответ</summary>
+      Указанный код выполнит 10 + 1 запрос в БД (первый запрос загрузит 10 клиентов, а затем для каждого клиента будет сделано по запросу).
+
+      ```rb
+      clients = Client.limit(10)
+
+      clients.each do |client|
+        puts client.address.postcode
+      end
+      ```
+
+      Проблему N+1 можно решить при помощи метода `includes`, при этом Active Record обеспечивает то, что все указанные связи загружаются с использованием минимально возможного количества запросов:
+
+      ```rb
+      clients = Client.includes(:address).limit(10)
+
+      clients.each do |client|
+        puts client.address.postcode
+      end
+      ```
+
+      В данном случае будет сделано всего два запроса:
+
+
+      ```sql
+      SELECT * FROM clients LIMIT 10
+      SELECT addresses.* FROM addresses WHERE (addresses.client_id IN (1,2,3,4,5,6,7,8,9,10))
+      ```
+
+      http://rusrails.ru/active-record-query-interface#neterpelivaya-zagruzka-svyazey
     </details>
 
 1. Как без рендеринга шаблона сказать мобильному приложению, что у него нет прав на просмотр определённого контента одной строкой в контроллере?
