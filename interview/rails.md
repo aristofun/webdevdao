@@ -366,87 +366,38 @@
 
     <details>
       <summary>Ответ</summary>
+      Фильм имеет имеет множество сезонов, сезон принадлежит фильму и имеет множество серий. У каждого фильма может быть только один официальный сайт. В каждом фильме снимается множество актёров, при этом каждый актёр снимается в разных фильмах:
 
-      * `belongs_to` - декларирует, что экземпляр одной модели принадлежит другой. Например: модель `Season` принадлежит модели `Film` 
-              
-          ```rb
-          class Season < ApplicationRecord
-            belongs_to :film
-          end
-          ```
-      * `has_one` - связь `one-to-one` декларирует, что каждый экземпляр модели содержит или обладает одним экземпляром другой модели. Например: модель `Film` имеет только один `OfficalSite` 
-      
-          ```rb
-          class Film < ApplicationRecord
-            has_one :official_site
-          end
-          
-          class OfficialSite < ApplicationRecord
-            belongs_to :film
-          end
-          ```   
-      * `has_many` - связь `many-to-many` декларирует, что каждый экземпляр модели имеет ноль или более экземпляров другой модели. Например: модели `Film` принадлежит некое количество сезонов `Season`
-          
-          ```rb
-          class Film < ApplicationRecord
-            has_many :seasons
-          end
-          ```
-          
-      * `has_many :through` - используется для настройки соединения `many-to-many` с другой моделью, указывает, что объявляющая модель может соответствовать нулю или более экземплярам другой модели через третью модель.
-      
-        Например `Film` имеет множество серий `Episodes` в каждом из своих сезонов `Season`
-                  
-          ```rb
-          class Film < ApplicationRecord
-            has_many :seasons
-            has_many :episodes, through: :seasons
-          end
-          
-          class Season < ApplicationRecord
-            belongs_to :film
-            has_many :episodes
-          end
+      ```rb
+      class Film < ApplicationRecord
+        has_many :seasons
+        has_many :episodes, through: :seasons
 
-          class Episode < ApplicationRecord
-            belongs_to :season
-          end
-          ```
-      * `has_one :through` - настраивает соединение `one-to-one` с другой моделью. Декларирует, что объявляющая модель может быть связана с одним экземпляром другой модели через третью модель. 
-      
-        Например, если каждый поставщик имеет один аккаунт, и каждый аккаунт связан с одной историей аккаунта, тогда модели могут выглядеть так:
-        
-          ```rb
-          class Supplier < ApplicationRecord
-            has_one :account
-            has_one :account_history, through: :account
-          end
-          
-          class Account < ApplicationRecord
-            belongs_to :supplier
-            has_one :account_history
-          end
-          
-          class AccountHistory < ApplicationRecord
-            belongs_to :account
-          end
-        ```
-      
-      * `has_and_belongs_to_many` создает прямое соединение многие-ко-многим с другой моделью, без промежуточной модели. Например, в `Film` снимается множество `Actor`, а `Actor` может сниматься при этом во множестве `Film` 
-        
-        ```rb
-        class Film < ApplicationRecord
-          has_and_belongs_to_many :actors
-        end
-        
-        class Actor < ApplicationRecord
-          has_and_belongs_to_many :films
-        end
-        ```
-      [Rails docs ru](http://rusrails.ru/active-record-associations)
-      
-      [Rails docs en](https://guides.rubyonrails.org/v5.2/association_basics.html) 
+        has_one :official_site
+        has_and_belongs_to_many :actors
+      end
+
+      class Season < ApplicationRecord
+        belongs_to :film
+        has_many :episodes
+      end
+
+      class Episode < ApplicationRecord
+        belongs_to :season
+      end
+
+      class OfficialSite < ApplicationRecord
+        belongs_to :film
+      end
+
+      class Actor < ApplicationRecord
+        has_and_belongs_to_many :films
+      end
+      ```
+
+      http://rusrails.ru/active-record-associations#tipy-svyazey
     </details>
+
 1. Что лучше выбрать `has_many :through` или `has_and_belongs_to_many`?
 
     <details>
