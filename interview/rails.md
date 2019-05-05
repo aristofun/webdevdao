@@ -373,6 +373,29 @@
     </details>
 
 1. Что такое `pluralize` и как он может быть полезен на проекте?
+
+    <details>
+      <summary>Ответ</summary>
+
+      `pluralize` - хелпер-метод, позволяющий сгенерировать множественное число к необходимому слову.
+      В качестве аргументов принимает количество, форму единственного числа и, опционально, форму множественного числа `count, singular, plural = nil`
+          
+      ```rb
+      pluralize(1, 'person')
+      # => 1 person
+      
+      pluralize(2, 'person')
+      # => 2 people
+      
+      pluralize(3, 'person', 'users')
+      # => 3 users
+      
+      pluralize(0, 'person')
+      # => 0 people
+      ```
+      
+      [Rails docs en](https://apidock.com/rails/ActionView/Helpers/TextHelper/pluralize)      
+    </details>
 1. Что такое `i18n` (интернационазиция)?
 
     <details>
@@ -415,9 +438,8 @@
            invoke    scss
            create      app/assets/stylesheets/greetings.scss
       ```
-    </details>
-     
-      [Rails docs en](https://guides.rubyonrails.org/command_line.html#rails-generate)      
+      [Rails docs en](https://guides.rubyonrails.org/command_line.html#rails-generate)     
+    </details> 
 
 1. Что такое scaffolding? Зачем он используется и где применяется?
 1. Как реализовано кеширование в рельсах?
