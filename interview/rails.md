@@ -65,7 +65,6 @@
       Подробнее [тут](http://rusrails.ru/active-record-query-interface#scopes)
     </details>
     
-1. Что такое синглтон метод?
 1. Что такое ActiveJob? Когда его использовать?
 1. Что такое Asset Pipeline?
 1. Что такое serializer и для чего он нужен? Где применяется? В чем его основная задача?
