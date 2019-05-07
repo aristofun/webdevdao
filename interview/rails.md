@@ -65,43 +65,6 @@
       Подробнее [тут](http://rusrails.ru/active-record-query-interface#scopes)
     </details>
     
-1. Что такое синглтон метод?
-
-    <details>
-      <summary>Ответ</summary>
-      Синглтон метод (singleton method) - метод, принадлежащий только одному объекту (экземпляру класса или классу). Другие экземпляры этого же класса (или классы) к этому методу доступа не имеют.
-           
-      ```rb
-      class A
-        def say_something
-          "Something"
-        end
-      end
-      
-      foo = A.new
-      
-      bar = A.new
-      
-      # присваиваем объекту 'foo' отдельный метод (синглтон) 
-      def foo.laugh
-        "HAHAHAHA!"
-      end
-      
-      foo.say_something
-      => "Something"
-      
-      bar.say_something
-      => "Something"
-      
-      foo.laugh
-      => "HAHAHAHA!"
-      
-      bar.laugh
-      => NoMethodError (undefined method `laugh' for #<A:0x0000559bd8412138>)
-      ```
-      Подробнее [тут](https://habr.com/ru/post/143990/)
-    </details>
-
 1. Что такое ActiveJob? Когда его использовать?
     <details>
       <summary>Ответ</summary>
