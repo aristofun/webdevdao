@@ -154,7 +154,7 @@
 
       Что касается JSON, то Active Model также предоставляет модуль `ActiveModel::Serializers::JSON` для сериализации/десериализации JSON.
 
-      [Статья в wiki о сериализации](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F)
+      [Статья в wiki о сериализации](https://ru.wikipedia.org/wiki/Сериализация)
       
       [Rails docs ru](http://rusrails.ru/active-model-basics)
       
