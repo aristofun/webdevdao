@@ -395,58 +395,6 @@
       Так же можно сообщить что все методы будут `self`, делается с помощью `class << self`.
     </details>
 
-1. Что такое синглтон-методы и синглтон-классы?
-
-    <details>
-      <summary>Ответ</summary>
-      Синглтон-метод – метод, который может принадлежать только одному объекту. Это даёт возможность добавлять уникальное поведение отдельным объектам.
-
-      ```rb
-      cat = Animal.new
-      dog = Animal.new
-
-      def dog.barking
-        'WOOF! WOOF!'
-      end
-
-      dog.barking
-      # => "WOOF! WOOF!"
-      dog.singleton_methods
-      # => [:barking]
-
-      cat.barking
-      # => NoMethodError (undefined method `barking' for #<Animal:0x000055a12143df38>)
-      cat.singleton_methods
-      # => []
-      ```
-
-      Методы класса (`self`-методы) на самом деле тоже являются синглтон-методами класса `Class`.
-
-      Таким образом, в Руби все методы принадлежат какому-то классу.
-
-      Синглтон-класс – это анонимный класс, в котором размещаются синглтон-методы объекта.
-
-      ```rb
-      dog.singleton_class
-      # => #<Class:#<Animal:0x000055a121433970>>
-
-      dog.singleton_class.method_defined?(:barking)
-      # => true
-
-      cat.singleton_class.method_defined?(:barking)
-      # => false
-      ```
-
-      Синглтон-класс встраивается в путь поиска метода и наследования.
-
-      ```rb
-      dog.singleton_class.superclass
-      # => Animal
-      ```
-
-      https://habr.com/ru/post/143990/
-    </details>
-
 1. Что такое `super`-методы и как они работают/где применяются?
 1. Что такое модуль в ruby? Какая разница между классом и модулем?
 
