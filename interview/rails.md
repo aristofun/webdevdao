@@ -65,12 +65,194 @@
       Подробнее [тут](http://rusrails.ru/active-record-query-interface#scopes)
     </details>
     
+1. Что такое синглтон метод?
+
+    <details>
+      <summary>Ответ</summary>
+      Синглтон метод (singleton method) - метод, принадлежащий только одному объекту (экземпляру класса или классу). Другие экземпляры этого же класса (или классы) к этому методу доступа не имеют.
+           
+      ```rb
+      class A
+        def say_something
+          "Something"
+        end
+      end
+      
+      foo = A.new
+      
+      bar = A.new
+      
+      # присваиваем объекту 'foo' отдельный метод (синглтон) 
+      def foo.laugh
+        "HAHAHAHA!"
+      end
+      
+      foo.say_something
+      => "Something"
+      
+      bar.say_something
+      => "Something"
+      
+      foo.laugh
+      => "HAHAHAHA!"
+      
+      bar.laugh
+      => NoMethodError (undefined method `laugh' for #<A:0x0000559bd8412138>)
+      ```
+      Подробнее [тут](https://habr.com/ru/post/143990/)
+    </details>
+
 1. Что такое ActiveJob? Когда его использовать?
+    <details>
+      <summary>Ответ</summary>
+      Active Job - это фреймворк для объявления заданий и их запуска на разных бэкендах очередей. Эти задания могут быть чем угодно: от регулярно запланированных чисток до списаний с карт или рассылок. 
+      В общем, всем, что может быть выделено в небольшие работающие части и запускаться параллельно.
+      
+      Имеет встроеные адаптеры для планировщиков фоновых задач:
+      
+      * Sidekiq
+      * Resque
+      * Delayed Job
+      * и т.д.
+
+      [Rails docs en](https://edgeguides.rubyonrails.org/active_job_basics.html)
+      
+      [Rails docs ru](http://rusrails.ru/active_job_basics)
+    </details>
+
 1. Что такое Asset Pipeline?
+    <details>
+      <summary>Ответ</summary>
+      Asset Pipeline (файлопровод) - фреймворк для соединения и минимизации, или сжатия ассетов JavaScript и CSS. 
+      Он также добавляет возможность писать эти ассеты на других языках и препроцессорах, таких как CoffeeScript, Sass и ERB. 
+      Это позволяет автоматически комбинировать ассеты приложения с ассетами других гемов.
+      
+      Первой особенностью файлопровода является соединение ассетов, что может уменьшить количество запросов, необходимых браузеру для отображения страницы. 
+      Браузеры ограничены в количестве запросов, которые они могут выполнить параллельно, поэтому меньшее количество запросов может означать более быструю загрузку вашего приложения.
+      
+      Второй особенностью файлопровода является минимизация или сжатие ассетов. Для файлов CSS это выполняется путем удаления пробелов и комментариев. Для JavaScript могут быть применены более сложные процессы. Можно выбирать из набора встроенных опций или определить свои.
+
+      Третьей особенностью файлопровода является то, что он позволяет писать эти ассеты на языке более высокого уровня с дальнейшей прекомпиляцией до фактического ассета. Поддерживаемые языки по умолчанию включают Sass для CSS, CoffeeScript для JavaScript и ERB для обоих.
+     
+      [Rails docs en](https://guides.rubyonrails.org/asset_pipeline.html)
+      
+      [Rails docs ru](http://rusrails.ru/asset-pipeline)
+    </details>
 1. Что такое serializer и для чего он нужен? Где применяется? В чем его основная задача?
+    <details>
+      <summary>Ответ</summary>
+      Сериализация (serialization) - процесс перевода каких-либо структур данных в последовательность битов.
+      Обратный процесс называется "десериализация" (deserialization).
+      
+      Сериализация используется для передачи объектов по сети и сохранения их в файлы. Например: сериализация заполненого объекта в XML-документ с последующей передачей документа 
+      по HTTP или протоколам электронной почты.
+      
+      Также часто используется для преобразования информации в формат JSON.
+      
+      В Rails интерфейс базовой сериализации представлен модулем `ActiveModel::Serialization`
+      Вам необходимо объявить хэш, содержащий атрибуты, которые вы хотите сериализовать. Атрибуты должны быть строками, не символами.
+
+      Что касается JSON, то Active Model также предоставляет модуль `ActiveModel::Serializers::JSON` для сериализации/десериализации JSON.
+
+      [Статья в wiki о сериализации](https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F)
+      
+      [Rails docs ru](http://rusrails.ru/active-model-basics)
+      
+      [Rails docs en](https://api.rubyonrails.org/classes/ActiveModel/Serialization.html)      
+    </details>
+
 1. Что такое presenter и для чего он нужен? Где применяется? В чем его основная задача?
+    <details>
+      <summary>Ответ</summary>
+      Presenter - паттерн проектирования, простой класс (в Rails), использующийся для вынесения какой-либо логики по обработке моделей из слоя контроллеров и слоя представлений.
+
+      Например:
+      
+      ```rb
+      module Posts
+        class IndexPresenter
+          # здесь как раз и разбивается логика шаблона и контроллера, 
+          # перенесите сюда логику из контроллеров
+          def posts
+            Posts.all
+          end
+     
+          def authors
+            Authors.all
+          end
+     
+          def post_published_count
+            Post.published_count
+          end
+        end
+      end
+      ```
+      Так будет выглядеть экшн `index` в контроллере
+      
+      ```rb
+      def index
+        @presenter = Posts::IndexPresenter.new
+      end
+      ```
+      
+      Так это будет представлоно во `view`
+      
+      ```rb
+       <p>
+         Всего опубликовано: <%= @presenter.published_count %>
+       </p>
+       <%= @presenter.authors # проход по массиву и отображение%>
+      ```
+      
+      Подробнее [тут](https://kpumuk.info/ruby-on-rails/simplifying-your-ruby-on-rails-code/)
+
+      Еще можно [здесь](http://blog.rukomoynikov.ru/dekorator-prezenter-helper-v-ruby/)
+   
+    </details>
+      
 1. Что такое валидации? Как написать свои валидации? Для чего нужны валидации? Где применяются валидации? Примеры Валидаций.
+    <details>
+      <summary>Ответ</summary>
+      Валидации используются, чтобы быть уверенными, что только проверенные данные сохраняются в вашу базу данных. 
+      Например, для вашего приложения может быть важно, что каждый пользователь предоставил валидный электронный и почтовый адреса. 
+
+      Валидации на уровне модели - наилучший способ убедиться, что в базу данных будут сохранены только валидные данные. Они не зависят от базы данных, не могут быть обойдены конечными пользователями и удобны в тестировании и обслуживании. 
+      Rails представляет простоту в обслуживании, представляет встроенные хелперы для общих нужд, а также позволяет создавать свои собственные методы валидации.
+      
+      Пример простейшей валидации передачу в модель `Person` данных из поля `name`:
+      
+      ```rb
+      class Person < ApplicationRecord
+        validates :name, presence: true
+      end
+    
+      Person.create(name: "John Doe").valid? # => true
+      Person.create(name: nil).valid? # => false
+      ```
+
+      Разработчик так же в праве написать свои собственные правила валидации, которые будут располагаться в каталоге `app/validators`.
+      
+      Пример кастомной валидации `email` по определенному пользователем шаблону: 
+     
+      ```rb
+      class EmailValidator < ActiveModel::EachValidator
+        def validate_each(record, attribute, value)
+          unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+            record.errors[attribute] << (options[:message] || "is not an email")
+          end
+        end
+      end
+ 
+      class Person < ApplicationRecord
+        validates :email, presence: true, email: true
+      end
+      ```
+      [Rails docs ru](http://rusrails.ru/active-record-validations)
+      
+      [Rails docs en](https://guides.rubyonrails.org/active_record_validations.html)      
+    </details>
 1. Есть ли у Rails механизм, который отслеживает изменения в базе данных?
+
 1. Что такое `Rack`?
 
     <details>
@@ -325,9 +507,71 @@
     </details>
 
 1. Что такое exception и от чего наследуется?
-1. Как сгенерировать модель, конторллер, представление (вьюху)
+1. Как сгенерировать модель, контрoллер, представление (вьюху)
+    
+    <details>
+      <summary>Ответ</summary>
+      
+      В Rails для создания моделей, контроллеров и представлений используется консольная команда `rails generate` (или `rails g`) с необходимыми ключами. 
+      Находиться при этом нужно в папке проекта.
+      Герераторы в Rails сильно упрощают создание проекта, т.к. нет необходимости создавать каждый файл вручную.
+            
+      Например создание контроллера для модели "Greetings" в котором будет экшн `hello`:
+      
+      ```rb
+      $ bin/rails generate controller Greetings hello
+           create  app/controllers/greetings_controller.rb
+            route  get "greetings/hello"
+           invoke  erb
+           create    app/views/greetings
+           create    app/views/greetings/hello.html.erb
+           invoke  test_unit
+           create    test/controllers/greetings_controller_test.rb
+           invoke  helper
+           create    app/helpers/greetings_helper.rb
+           invoke  assets
+           invoke    coffee
+           create      app/assets/javascripts/greetings.coffee
+           invoke    scss
+           create      app/assets/stylesheets/greetings.scss
+      ```
+      [Rails docs en](https://guides.rubyonrails.org/command_line.html#rails-generate)     
+    </details> 
+
 1. Что такое scaffolding? Зачем он используется и где применяется?
+  
+    <details>
+      <summary>Ответ</summary>
+      Rails Scaffold - встроенный генератор, который запускает другие генераторы Rails, чтобы одной командой сгенерировать набор из модели, контроллера, вьюх, тестов, миграций и т.д.
+      Предоставляется возможность создавать собственные предустановки генерации.
+      
+      [Rails docs en](https://guides.rubyonrails.org/v3.2/getting_started.html#getting-up-and-running-quickly-with-scaffolding)
+    </details>
+ 
 1. Как реализовано кеширование в рельсах?
+
+    <details>
+      <summary>Ответ</summary>
+      
+      Кэширование означает хранение контента, генерируемого в цикле запрос-отклик, и повторное использование его при ответе на подобные запросы.
+      Кэширование значительно загрузку страниц, снижает количество запросов к серверу.
+      
+      Виды кэширования:
+      
+      * Кэширование страницы — начиная с Rails 4 добавляется гемом `actionpack-page_caching`
+      * Кэширование экшна — начиная с Rails 4 добавляется гемом `actionpack-action_caching`
+      * Кэширование фрагмента — позволяет фрагменту логики вьюхи быть обернутым в блок кэша и обслуженным из хранилища кэша для последующего запроса
+      * Кэширование матрешкой (Russian doll caching) — Можно вкладывать кэшированные фрагменты в другие кэшированные фрагменты. Eсли обновляется отдельный продукт, другие внутренние фрагменты могут быть повторно использованы при регенерации внешнего фрагмента.
+    
+      Rails также предоставляет другие виды кэширования
+      
+      Подробнее:
+      
+      [Rails docs ru](http://rusrails.ru/caching-with-rails-an-overview)
+      
+      [Rails docs en](https://guides.rubyonrails.org/caching_with_rails.html)     
+    </details>
+
 1. Представьте, что есть огромная табл. `users`. Как можно перебрать ее элементы максимально быстро?
 
     <details>
