@@ -41,3 +41,5 @@
 [Ruby: сервис статистики видеопросмотров](video_view_statistics_service.md)
 
 [Ruby: сервис проверки кредитных карт](credit_card_checker.md)
+
+[TelegramBot: конвертация стикеров в PNG-файлы](telegram_bot_sticker_png.md)
