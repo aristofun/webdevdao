@@ -43,3 +43,5 @@
 [Ruby: сервис проверки кредитных карт](credit_card_checker.md)
 
 [TelegramBot: конвертация стикеров в PNG-файлы](telegram_bot_sticker_png.md)
+
+[RoR + PostgreSQL: приложение, которое импортирует коммиты GitHub в БД](import_commits_from_github.md)
