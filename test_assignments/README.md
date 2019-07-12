@@ -43,3 +43,5 @@
 [Ruby: сервис проверки кредитных карт](credit_card_checker.md)
 
 [TelegramBot: конвертация стикеров в PNG-файлы](telegram_bot_sticker_png.md)
+
+[RoR + Front end: RESTful JSON API для управления пользователями сайта](web_panel_for_users_control.md)
