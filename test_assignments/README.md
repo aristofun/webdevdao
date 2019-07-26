@@ -47,3 +47,5 @@
 [RoR + Front end: RESTful JSON API для управления пользователями сайта](web_panel_for_users_control.md)
 
 [RoR + PostgreSQL: приложение, которое импортирует коммиты GitHub в БД](import_commits_from_github.md)
+
+[RoR: консольное приложение для проверки статистики футбольных матчей](player_statistics.md)
