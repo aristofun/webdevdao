@@ -49,3 +49,10 @@
 [RoR + PostgreSQL: приложение, которое импортирует коммиты GitHub в БД](import_commits_from_github.md)
 
 [RoR: консольное приложение для проверки статистики футбольных матчей](player_statistics.md)
+
+[RoR: JSON API для новостного сайта](news_site_API.md)
+
+[RoR: simple appointments management system](appointments_management_system.md)
+
+[RoR: приложение для ведения списка персон](app_for_managing_people_list.md)
+
