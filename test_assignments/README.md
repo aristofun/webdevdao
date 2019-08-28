@@ -57,3 +57,5 @@
 [RoR: приложение для ведения списка персон](app_for_managing_people_list.md)
 
 [RoR: импорт коммитов из репозитория GitHub](import_commits_app.md)
+
+[RoR: billing system](billing_system.md)
