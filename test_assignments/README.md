@@ -50,4 +50,12 @@
 
 [RoR: консольное приложение для проверки статистики футбольных матчей](player_statistics.md)
 
+[RoR: JSON API для новостного сайта](news_site_API.md)
+
+[RoR: simple appointments management system](appointments_management_system.md)
+
+[RoR: приложение для ведения списка персон](app_for_managing_people_list.md)
+
+[RoR: импорт коммитов из репозитория GitHub](import_commits_app.md)
+
 [RoR: billing system](billing_system.md)
