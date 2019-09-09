@@ -59,3 +59,5 @@
 [RoR: импорт коммитов из репозитория GitHub](import_commits_app.md)
 
 [RoR: billing system](billing_system.md)
+
+[RoR: структура БД для хранения данных о товарах и магазинах](database_structure_for_shops.md)
