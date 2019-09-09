@@ -49,3 +49,5 @@
 [RoR + PostgreSQL: приложение, которое импортирует коммиты GitHub в БД](import_commits_from_github.md)
 
 [RoR: консольное приложение для проверки статистики футбольных матчей](player_statistics.md)
+
+[RoR: структура БД для хранения данных о товарах и магазинах](database_structure_for_shops.md)
