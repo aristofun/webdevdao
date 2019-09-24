@@ -61,3 +61,5 @@
 [RoR: billing system](billing_system.md)
 
 [RoR: структура БД для хранения данных о товарах и магазинах](database_structure_for_shops.md)
+
+[RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
