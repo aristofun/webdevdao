@@ -546,7 +546,46 @@
 
     <details>
       <summary>Ответ</summary>
+      
       https://www.8host.com/blog/kratkij-obzor-veb-serverov-dlya-prilozhenij-ruby/
+      
+      * WeBrick
+      * Phusion Passenger
+      * Puma
+      * Thin
+      * Unicorn
+      * Iodine
+    </details>
+1. Что такое Save Navigation
+
+    <details>
+      <summary>Ответ</summary>
+      
+      В новом синтаксисе выражение из примеров можно записать так:
+      
+      `image = user&.profile&.thumbnails&.large`
+      
+      Оператор применяется для сокращения выражений, где выполняется проверка существования объекта и 
+      затем обращение к методу объекта только в случае положительной проверки:
+      
+      `obj.nil? && obj.some_method`
+      
+      Вместе с лаконичным видом такая реализация дает быструю проверку на `nil`, 
+      так как изменения реализованы на уровне парсера и ruby-код в проверках не участвует. 
+      После того, как встретился `nil`, дальнейшее выполнение цепочки прерывается. 
+      Проверка выполняется именно на `nil`, а не на логическое условие, 
+      поэтому если результатом окажется `false`, то выполнение будет успешно продолжено по цепочке дальше.
+      
+      Если в метод передаются аргументы, то, в отличие от `try`, 
+      они вычисляются только в том случае, если объект существует и метод реально вызывается. 
+      Например, для ActiveSupport в выражении `obj.try(:foo, bar())` всегда будет выполняться `bar()`, 
+      даже если `obj` не существует. Но в выражении `obj&.foo(bar())`, 
+      аргумент `bar()` будет вычислен только тогда, когда `obj` не равен `nil`.
+      
+      http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/
+      https://www.competa.com/blog/ruby-safe-navigation-operator-methods/
+      https://habr.com/ru/company/truevds/blog/271301/
+      https://medium.com/@CohenCarlisle/why-you-shouldnt-be-using-rails-try-for-nil-safe-navigation-in-ruby-d3123a3965ac
     </details>
 
 1. Как и чем проверить скорость работы методов? К примеру, что работает быстрее `each`, `proc` или `lambda`?
