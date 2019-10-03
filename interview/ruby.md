@@ -556,7 +556,7 @@
       * Unicorn
       * Iodine
     </details>
-1. Что такое Save Navigation
+1. Что такое safe navigation?
 
     <details>
       <summary>Ответ</summary>
@@ -583,8 +583,11 @@
       аргумент `bar()` будет вычислен только тогда, когда `obj` не равен `nil`.
       
       http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/
+      
       https://www.competa.com/blog/ruby-safe-navigation-operator-methods/
+      
       https://habr.com/ru/company/truevds/blog/271301/
+      
       https://medium.com/@CohenCarlisle/why-you-shouldnt-be-using-rails-try-for-nil-safe-navigation-in-ruby-d3123a3965ac
     </details>
 
