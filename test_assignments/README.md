@@ -63,3 +63,5 @@
 [RoR: структура БД для хранения данных о товарах и магазинах](database_structure_for_shops.md)
 
 [RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
+
+[RoR: подсчет различных видов html-тегов по вводимым url](count_html_tags_by_url.md)
