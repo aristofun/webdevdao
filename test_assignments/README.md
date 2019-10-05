@@ -64,4 +64,6 @@
 
 [RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
 
+[RoR: подсчет различных видов html-тегов по вводимым url](count_html_tags_by_url.md)
+
 [RoR: генерация pdf-файлов (дипломов) по гитхабу](pdf_diploma_generator.md)
