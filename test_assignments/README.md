@@ -65,3 +65,5 @@
 [RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
 
 [RoR: подсчет различных видов html-тегов по вводимым url](count_html_tags_by_url.md)
+
+[RoR: REST API для блога](rest_api_for_blog.md)
