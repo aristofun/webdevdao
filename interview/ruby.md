@@ -192,7 +192,9 @@
 
     <details>
       <summary>Ответ</summary>
-      По умолчанию происходит `Integer`-деление с округлением к меньшему. Чтобы получить `16.6` нужно чтобы одно из чисел имело тип `Float`.
+      Если все аргументы арифметического выражения целые числа, то результат будет целым, если хотя бы одно число с плавающей запятой, то результат будет числом с плавающей запятой.
+
+      Таким образом, чтобы получить `16.6` нужно чтобы одно из чисел имело тип `Float`.
 
       https://stackoverflow.com/questions/5502761/why-is-division-in-ruby-returning-an-integer-instead-of-decimal-value
     </details>
@@ -200,8 +202,15 @@
 1. Почему в Ruby `24.0 * 0.1 ≠ 2.4`?
     <details>
       <summary>Ответ</summary>
+      Поскольку внутренне компьютеры используют формат (binary floating point), который не может точно представить число как 0.1, 0.2 или 0.3.
+
+      Когда код компилируется или интерпретируется, ваш «0.1» уже округляется до ближайшего числа в этом формате, что приводит к небольшой ошибке округления даже до того, как произойдет вычисление.
 
       https://floating-point-gui.de/basic/
+
+      https://github.com/rdp/ruby_tutorials_core/wiki/Ruby-Talk-FAQ#floats_imprecise
+
+      https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems
     </details>
 
 1. Какие структуры есть в ruby?
