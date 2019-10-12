@@ -20,6 +20,8 @@
 
 [RoR: JSON API с экшенами для блога](json_api_for_blog.md)
 
+[RoR: API для обменника валют](currency_exchange_rails_api.md)
+
 [JSON API: прототип для системы бронирования авто](prototype_for_car_hiring_system.md)
 
 [RoR: meals delivery service](meals_delivery_service.md)
