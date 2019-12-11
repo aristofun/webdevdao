@@ -87,7 +87,7 @@ Roadmap или карта знаний современного web-програ
     + Грэди Буч "ОО анализ и дизайн", **обязательна к прочтению**, основополагающая книга
 
       http://www.helloworld.ru/texts/comp/other/oop/ch01.htm
-      
+
     + Статья по алгоритмам и структурам данных (примеры на JavaScript).
 
       https://dou.ua/lenta/articles/what-you-should-know-about-algorithms/?utm_source=dlvr.it&utm_medium=linkedin
@@ -238,7 +238,7 @@ Roadmap или карта знаний современного web-програ
 
 - Поиск перевода на английский в контексте для русский слов, выражений и идиом
 
-- АНГЛИЙСКИЙ ЯЗЫК ПО ПЛЕЙЛИСТАМ Английский язык по плейлистам 
+- Английский язык по плейлистам 
   
   https://www.youtube.com/channel/UC_3oKG5Szq-m6Xz-MjRZgpw
 
