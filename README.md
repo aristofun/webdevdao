@@ -30,9 +30,11 @@ Roadmap или карта знаний современного web-програ
 
       https://www.coursera.org/learn/analysis-of-algorithms
 
-    + Чарльз Петцольд "Код" (беллетристика про устройство компьютера для всех)
+    + Статья по алгоритмам и структурам данных (примеры на JavaScript).
 
-      https://www.litres.ru/charlz-petcold/kod-taynyy-yazyk-informatiki/
+      https://dou.ua/lenta/articles/what-you-should-know-about-algorithms/?utm_source=dlvr.it&utm_medium=linkedin
+
+
 
 - **Воображение**
 
