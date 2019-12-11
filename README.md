@@ -236,8 +236,6 @@ Roadmap или карта знаний современного web-програ
 
   http://context.reverso.net
 
-- Поиск перевода на английский в контексте для русский слов, выражений и идиом
-
 - Английский язык по плейлистам 
   
   https://www.youtube.com/channel/UC_3oKG5Szq-m6Xz-MjRZgpw
