@@ -30,6 +30,10 @@ Roadmap или карта знаний современного web-програ
 
       https://www.coursera.org/learn/analysis-of-algorithms
 
+    + Чарльз Петцольд "Код" (беллетристика про устройство компьютера для всех)
+
+      https://www.litres.ru/charlz-petcold/kod-taynyy-yazyk-informatiki/
+
 
 
 - **Воображение**
