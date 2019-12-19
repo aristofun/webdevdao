@@ -90,6 +90,10 @@ Roadmap или карта знаний современного web-програ
 
       http://www.helloworld.ru/texts/comp/other/oop/ch01.htm
 
+      Статья по алгоритмам и структурам данных (примеры на JavaScript).
+
+      https://dou.ua/lenta/articles/what-you-should-know-about-algorithms/?utm_source=dlvr.it&utm_medium=linkedin
+
 - **REST** архитектура
 
     + https://www.youtube.com/watch?v=IB1IhWbgOws
@@ -163,6 +167,10 @@ Roadmap или карта знаний современного web-програ
 
       https://devdocs.io/ruby~2.5/
 
+    + Онлайн-курс по Ruby (Eng).
+
+      https://leetcode.com/explore/learn/card/become-a-web-developer/
+
 - **Python/Django**
 
   Среди питонистов нет единства в том, какие ресурсы считать лучшими, поэтому ниже ссылки с наиболее авторитетными мнениями:
@@ -227,6 +235,10 @@ Roadmap или карта знаний современного web-програ
 - Поиск перевода на английский в контексте для русский слов, выражений и идиом
 
   http://context.reverso.net
+
+- Английский язык по плейлистам 
+  
+  https://www.youtube.com/channel/UC_3oKG5Szq-m6Xz-MjRZgpw
 
 # PS
 
