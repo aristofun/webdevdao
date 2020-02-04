@@ -64,10 +64,12 @@
 
 [RoR: структура БД для хранения данных о товарах и магазинах](database_structure_for_shops.md)
 
-[RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
+[RoR: система решения математических уравнений](solving_mathematical_equations_app.md)
 
 [RoR: подсчет различных видов html-тегов по вводимым url](count_html_tags_by_url.md)
 
 [RoR: генерация pdf-файлов (дипломов) по гитхабу](pdf_diploma_generator.md)
 
 [RoR: REST API для блога](rest_api_for_blog.md)
+
+[RoR: система бронирование столов в ресторанах (только модели)](https://github.com/aristofun/webdevdao/blob/master/test_assignments/restaurants_with_tables.md)
