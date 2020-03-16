@@ -31,7 +31,7 @@ All of these card types also generate numbers such that they can be validated by
 
     2.2. `8+4+0+8+0+4+2+2+6+4+1+0+6+1+4+8+1+8+3 = 70`
 
-    2.3. `70 % 10 == 0 #=> This that card is valid.`
+    2.3. `70 % 10 == 0 #=> Thus that card is valid.`
 
 3. Let's try one more, `4417 1234 5678 9112`:
 
