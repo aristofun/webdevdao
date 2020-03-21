@@ -40,6 +40,8 @@
 
 [Ruby: тотализатор](totalizator.md)
 
+[Ruby: конвертер из CSV в ASCII таблицу](csv_ascii_converter.md)
+
 [Ruby: сервис статистики видеопросмотров](video_view_statistics_service.md)
 
 [Ruby: сервис проверки кредитных карт](credit_card_checker.md)
