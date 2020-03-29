@@ -1,5 +1,7 @@
 # Список тестовых заданий на позицию Ruby on Rails разработчика
 
+Ссылка на этот список: https://git.io/JvQHV
+
 [SQL: запрос к БД](SQL_find_max_score.md)
 
 [SQL: написать запросы к базе данных](SQL_query_for_users.md)
