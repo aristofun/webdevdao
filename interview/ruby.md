@@ -542,6 +542,50 @@
       Реализация возможна через модули с помощью подключения `include`/`extend`.
     </details>
 
+1.  Если в модуле сделать `extend self`, что произойдёт?
+
+    <details>
+      <summary>Ответ</summary>
+
+      Как указано выше, `extend` позволяет подключить методы модуля к классу без создания экземпляра.
+
+      Для модуля `self` — это сам модуль.
+
+      Поэтому добавление `extend self` позволит использовать инстанс-методы модуля в качестве его `self`-методов.
+
+      Без `extend self`:
+
+      ```rb
+      module MyModule
+        def my_method
+          puts 'Hello!'
+        end
+      end
+
+      MyModule.my_method
+
+      # undefined method `my_method' for MyModule:Module (NoMethodError)
+      ```
+
+      После добавления:
+
+      ```rb
+      module MyModule
+        extend self
+
+        def my_method
+          puts 'Hello!'
+        end
+      end
+
+      MyModule.my_method
+
+      # Hello!
+      ```
+
+      https://blog.bigbinary.com/2012/06/28/extend-self-in-ruby.html#so-how-does-extend-self-work
+    </details>
+
 1. Какие есть способы вызова методов в ruby?
 
     <details>
@@ -629,5 +673,3 @@
       С учётом особенностей синтаксиса гема пишется код, в котором тестируются выбранные методы. При запуске программа тестируют производительность методов с указанием разницы в процентах.
       https://github.com/evanphx/benchmark-ips
     </details>
-
-1.  Если в модуле сделать `extend self` что произойдет? 
