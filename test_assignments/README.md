@@ -76,4 +76,6 @@
 
 [RoR: REST API для блога](rest_api_for_blog.md)
 
-[RoR: система бронирования столов в ресторанах (только модели)](https://github.com/aristofun/webdevdao/blob/master/test_assignments/restaurants_with_tables.md)
+[RoR: система бронирования столов в ресторанах (только модели)](restaurants_with_tables.md)
+
+[RoR: API для управления списками задач](oblako_group_test_app.md)
