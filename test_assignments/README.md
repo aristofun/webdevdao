@@ -79,3 +79,5 @@
 [RoR: система бронирования столов в ресторанах (только модели)](restaurants_with_tables.md)
 
 [RoR: API для управления списками задач](oblako_group_test_app.md)
+
+[RoR: Приложение для заказа обеда](lunch_ordering_saas.md)
