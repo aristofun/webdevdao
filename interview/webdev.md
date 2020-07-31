@@ -60,3 +60,38 @@
 
 1. Что такое crontab и для чего используются?
 1. Как устроен HTTP, какие есть заголовки, как работают cookies, как работает HTTPS?
+
+1. Реализация протокола AMQP
+
+    <details>
+      <summary>Ответ</summary>
+      
+      https://kt.team/hr/blog/rabbitmq
+    </details>
+    
+1. Что такое OSI-модель? Сколько уровней она имеет, опишите их.
+
+    <details>
+      <summary>Ответ</summary>
+      
+      https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_OSI
+    </details>
+
+1. Назовите отличия протокола TCP и UDP.
+
+    <details>
+      <summary>Ответ</summary>
+      
+      https://wiki.merionet.ru/seti/23/tcp-i-udp-v-chem-raznica/
+      http://pyatilistnik.org/chem-otlichaetsya-protokol-tcp-ot-udp/
+      https://yandex.ru/q/question/computers/chem_otlichaetsia_tcp_ot_udp_66a93f75/
+      https://habr.com/ru/company/oleg-bunin/blog/461829/
+    </details>
+
+1. Что такое RPC?.
+
+    <details>
+      <summary>Ответ</summary>
+      
+      https://ru.wikipedia.org/wiki/%D0%A3%D0%B4%D0%B0%D0%BB%D1%91%D0%BD%D0%BD%D1%8B%D0%B9_%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80
+    </details>

@@ -300,6 +300,14 @@
 
       https://i-love-ruby.gitlab.io/#_loops
     </details>
+    
+1. Назовите отличия `inject` и `reduce`.
+    
+    <details>
+      <summary>Ответ</summary>
+      
+      Это алиасы.
+    </details>
 
 1. Какие переменные бывают, где они используются, где они доступны (поля видимости)?
 
@@ -672,4 +680,25 @@
 
       С учётом особенностей синтаксиса гема пишется код, в котором тестируются выбранные методы. При запуске программа тестируют производительность методов с указанием разницы в процентах.
       https://github.com/evanphx/benchmark-ips
+    </details>
+    
+1. Какие существуют Ruby интерпретаторы?
+    <details>
+      <summary>Ответ</summary>
+
+      * CRuby
+      * MRI
+      * JRuby (MRi на базе JVM)
+      * Rubinius (реализация многопоточности на самом Ruby, достаточно успешная, но не без сайдэффектов)
+      * TruffleRuby
+      
+      https://habr.com/ru/post/337100/
+    </details>
+
+1. Что такое JIT?
+    <details>
+      <summary>Ответ</summary>
+
+      https://blog.heroku.com/ruby-just-in-time-compilation
+      https://ru.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F
     </details>

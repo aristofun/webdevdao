@@ -446,7 +446,6 @@
       * `:restrict_with_error` — при наличии связанного объекта вызовет ошибку
       * `:restrict_with_exception` — при наличии связанного объекта вызовется исключение
 
-
       http://rusrails.ru/active-record-associations
     </details>
 
@@ -576,13 +575,13 @@
 
       В данном случае будет сделано всего два запроса:
 
-
       ```sql
       SELECT * FROM clients LIMIT 10
       SELECT addresses.* FROM addresses WHERE (addresses.client_id IN (1,2,3,4,5,6,7,8,9,10))
       ```
 
       http://rusrails.ru/active-record-query-interface#neterpelivaya-zagruzka-svyazey
+      
     </details>
 
 1. Как без рендеринга шаблона сказать мобильному приложению, что у него нет прав на просмотр определённого контента одной строкой в контроллере?
@@ -620,6 +619,14 @@
       https://habr.com/ru/post/158011/
     </details>
     
+1. Назовите отличия Hash и HashWithIndifferentAccess
+  
+    <details>
+      <summary>Ответ</summary>
+
+      https://stackoverflow.com/questions/31890778/difference-between-ruby-s-hash-and-activesupport-s-hashwithindifferentaccess
+    </details>
+
 1.  Чем отличается after_save от after_commit? Почему это плохие паттерны? Что такое уровни изоляции в БД ?
 1.  Есть 2 версии приложения и в новой версии мы хотим поменять у уже существующей колонки значения на дефолтные, но чтоб в старом приложении все работало со старыми значениями (бд одна само собой). Как ты это будешь делать? Какую миграцию напишешь?
 1.  Пустое приложение, как ты сделаешь регистрацию пользователя и отправку ему имейла сразу после регистрации? Доп вопрос - как гарантировать, что мы юзеру отошлем только 1 имейл? 
