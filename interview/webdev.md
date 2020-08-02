@@ -87,6 +87,7 @@
         последовательно подключая протоколы на каждом из уровней.
       
       https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_OSI
+      https://wiki.merionet.ru/seti/18/model-osi-eto-prosto/
     </details>
 
 1. Назовите отличия протокола TCP и UDP.
