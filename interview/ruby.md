@@ -698,7 +698,11 @@
 1. Что такое JIT?
     <details>
       <summary>Ответ</summary>
+      Just-In-Time (JIT) компиллятор оптимизирует, часто вызываемые методы.
+      Таким образом, они будут запускаться быстрее в последующих вызовых.
+      Главная цель JIT - это пропуск нескольких или всех шагов интерпретации.
 
       https://blog.heroku.com/ruby-just-in-time-compilation
       https://ru.wikipedia.org/wiki/JIT-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F
+      https://www.youtube.com/watch?v=AJIAMT7ilHw
     </details>
