@@ -49,6 +49,7 @@
 
     <details>
       <summary>Ответ</summary>
+      
       Скоупы позволяют задавать часто используемые запросы, к которым можно обращаться как к вызовам метода в связанных
       объектах или моделях. С помощью этих скоупов можно использовать такие методы как where, joins и includes.
       Все методы скоупов возвращают объект `ActiveRecord::Relation`, который позволяет вызывать на нем
@@ -228,16 +229,20 @@
 
       Какие серверы есть:
 
-      * Phusion Passenger
-      * Puma
+      * WEBrick
       * Thin
-      * Unicorn
+      * Puma
+      * Unicorn     
+      * Phusion Passenger
+      * Iodine
+    </details>
 
       [Как устроен Rack](https://gist.github.com/Integralist/8341704)
 
       * https://www.youtube.com/watch?v=NJ-ilQMsqMs
       * https://www.youtube.com/watch?v=MHYMObuEahc
       * https://www.youtube.com/watch?v=DzrVB1-KyTU
+      * https://www.8host.com/blog/kratkij-obzor-veb-serverov-dlya-prilozhenij-ruby/
     </details>
 
 1. Что такое `partial` и для чего используются?
@@ -624,6 +629,7 @@
     <details>
       <summary>Ответ</summary>
       Отличие состоит в том, что из хэша нельзя достать значение по строковому ключу. Только по символу.
+      
       В HashWithIndifferentAccess можно получить ключ двумя способами.
 
       https://stackoverflow.com/questions/31890778/difference-between-ruby-s-hash-and-activesupport-s-hashwithindifferentaccess
