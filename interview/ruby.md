@@ -621,6 +621,22 @@
     </details>
 
 1. Многопоточность в ruby?
+
+1. Какие сервера бывают под Ruby?
+
+    <details>
+      <summary>Ответ</summary>
+
+      https://www.8host.com/blog/kratkij-obzor-veb-serverov-dlya-prilozhenij-ruby/
+
+      * WeBrick
+      * Phusion Passenger
+      * Puma
+      * Thin
+      * Unicorn
+      * Iodine
+    </details>
+
 1. Что такое safe navigation?
 
     <details>
