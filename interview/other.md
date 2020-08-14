@@ -45,9 +45,12 @@
     <details>
       <summary>Ответ</summary>
       
-      * jira,
-      * pivotaltrecker
-      * redmine
+      * Jira
+      * YouTrack
+      * Pivotaltrecker
+      * Redmine
+      * Mantis
+      * Asana
     </details>
 
 1. Какие источники используете для информации? Какие сайты, книги?
