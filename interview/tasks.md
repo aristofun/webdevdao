@@ -48,3 +48,25 @@
     getChange(4, 3.14) => [1, 0, 1, 1, 1, 0]
     getChange(0.45, 0.34) => [1, 0, 1, 0, 0, 0]
     ```
+
+1. **Palindrome Swapper**: Have the function `PalindromeSwapper(str)` take the `str` parameter being passed and determine if a palindrome can be created by swapping two adjacent characters in the string. If it is possible to create a palindrome, then your program should return the palindrome, if not then return the string `-1`. The input string will only contain alphabetic characters.
+
+    For example: if `str` is `"rcaecar"` then you can create a palindrome by swapping the second and third characters, so your program should return the string `racecar` which is the final palindromic string.
+
+    Examples:
+    
+    * Input: `"anna"`, Output: `anna`
+    * Input: `"kyaak"`, Output: `kayak`
+    
+1. Реализовать возможность скрытия логина скайпа (логин может быть разделен точкой). Символ скрытия по умолчанию `"ххх"`.
+
+    Логин может встретиться в двух местах:
+
+    1. В строчке. skype:some.login
+    1. В html тэге <a></a>. Пример `<a href=\"skype:some.login?call\">skype</a>`
+
+1. Реализовать возможность скрытия произвольного количества цифр телефонного номера. По умолчанию скрывается 3 последние цифры. По умолчанию символ замены цифр `"х"`.
+
+    Формат номера `+1 111 111 11 11`. Результат выполнения: `+1 111 111 1х хх`.
+    
+    Пробелов между цифрами может быть сколько угодно, но результат выполнения должен приводиться к формату `+1 111 111 11 11`.
