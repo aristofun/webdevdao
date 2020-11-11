@@ -81,3 +81,5 @@
 [RoR: API для управления списками задач](oblako_group_test_app.md)
 
 [RoR: Приложение для заказа обеда](lunch_ordering_saas.md)
+
+[RoR: Приложение для управления поликлиникой](clinic_management_system.md)
