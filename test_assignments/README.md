@@ -83,3 +83,5 @@
 [RoR: Приложение для заказа обеда](lunch_ordering_saas.md)
 
 [RoR: Приложение для управления поликлиникой](clinic_management_system.md)
+
+[RoR: Приложение для построения небольшого сайта с иерархией страниц](app_with_page_hierarchy.md)
