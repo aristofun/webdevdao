@@ -72,3 +72,34 @@
     Пробелов между цифрами может быть сколько угодно, но результат выполнения должен приводиться к формату `+1 111 111 11 11`.
 
 1. Пользователь вводит строки, содержащие цифры, разделенные запятыми. Например "1,2,3,4". Пустая строка означает окончание ввода. После окончания ввода одной строки, запрашивается следующая и т.д. Две пустых строки подряд означает, что пользователь закончил ввод данных. Необходимо проверить что введенная матрица является квадратной (количество строк равно количеству столбцов). Если матрица является квадратной, то посчитать ее определитель.
+
+1. **HTML Elements**: Have the function `HTMLElements(str)` read the `str` parameter being passed which will be a string of HTML DOM elements and plain text. The elements that will be used are: `b, i, em, div, p`.
+
+   For example: if `str` is `"<div><b><p>hello world</p></b></div>"` then this string of DOM elements is nested correctly so your program should return the string `true`.
+
+   If a string is not nested correctly, return the first element encountered where, if changed into a different element, would result in a properly formatted string. If the string is not formatted properly, then it will only be one element that needs to be changed.
+
+   For example: if `str` is `"<div><i>hello</i>world</b>"` then your program should return the string `div` because if the first `<div>` element were changed into a `<b>`, the string would be properly formatted.
+
+   Examples:
+
+   * Input: `"<div><div><b></b></div></p>"`, Output: `div`
+   * Input: `"<div>abc</div><p><em><i>test test test</b></em></p>"`, Output: `i`
+
+1. **K Unique Characters**: Have the function `KUniqueCharacters(str)` take the `str` parameter being passed and find the longest substring that contains `k` unique characters, where `k` will be the first character from the string. The substring will start from the second position in the string because the first character will be the integer `k`.
+
+   For example: if `str` is `"2aabbacbaa"` there are several substrings that all contain 2 unique characters, namely: `["aabba", "ac", "cb", "ba"]`, but your program should return `"aabba"` because it is the longest substring. If there are multiple longest substrings, then return the first substring encountered with the longest length. `k` will range from 1 to 6.
+
+   Examples:
+
+   * Input: `"3aabacbebebe"`, Output: `"cbebebe"`
+   * Input: `"2aabbcbbbadef"`, Output: `"bbcbbb"`
+
+1. **Time Difference**: Have the function `TimeDifference(strArr)` read the array of strings stored in `strArr` which will be an unsorted list of times in a twelve-hour format like so: `HH:MM(am/pm)`. Your goal is to determine the smallest difference in minutes between two of the times in the list.
+
+   For example: if `strArr` is `["2:10pm", "1:30pm", "10:30am", "4:42pm"]` then your program should return `40` because the smallest difference is between `1:30pm` and `2:10pm` with a difference of 40 minutes. The input array will always contain at least two elements and all of the elements will be in the correct format and unique.
+
+   Examples:
+
+   * Input: `["1:10pm", "4:40am", "5:00pm"]`, Output: `230`
+   * Input: `["10:00am", "11:45pm", "5:00am", "12:01am"]`, Output: `16`
