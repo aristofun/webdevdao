@@ -95,18 +95,23 @@
    * Input: `"3aabacbebebe"`, Output: `"cbebebe"`
    * Input: `"2aabbcbbbadef"`, Output: `"bbcbbb"`
 
-1. **Time Difference**: Have the function `TimeDifference(strArr)` read the array of strings stored in `strArr` which will be an unsorted list of times in a twelve-hour format like so: `HH:MM(am/pm)`. Your goal is to determine the smallest difference in minutes between two of the times in the list.
-
-   For example: if `strArr` is `["2:10pm", "1:30pm", "10:30am", "4:42pm"]` then your program should return `40` because the smallest difference is between `1:30pm` and `2:10pm` with a difference of 40 minutes. The input array will always contain at least two elements and all of the elements will be in the correct format and unique.
-
-   Examples:
-
-   * Input: `["1:10pm", "4:40am", "5:00pm"]`, Output: `230`
-   * Input: `["10:00am", "11:45pm", "5:00am", "12:01am"]`, Output: `16`
-
 1. **Сумма квадратов**: Программа должна вернуть строку `'true'`, если заданное число является суммой квадратов и `'false'`, если не является.
 
    Например:
    
    * 25 должно вернуть `'true'`, потому что `25 = 32 + 42`
    * 1601 должно вернуть `'true'`, потому что `1601 = 402 + 12`
+
+1. **Сравнение массивов**: Даны два массива массивов. Сравнить массивы и вернуть `true`, если массивы массивов одинаковы. Элементы в массиве могут быть переставлены местами, и значения внутри этих массивов могут тоже быть переставлены.
+   
+   Например:
+   * ```# func([[5, 0], [5, 0], [5, 0]], [[5, 0], [5, 0], [0, 5]]) #=> true```
+   * ```# func([[2, 3], [5, 0]], [[5, 0], [3,2]]) #=> true```
+   
+1. **Покупка/продажа зерна**: Дан массив с ценами на зерно по дням. Цена покупки и продажи одинакова в этот день. Найти **индексы дня** покупки и последующей продажи для получения максимальной выгоды. 
+   
+   Вернуть массив из 2х элементов: индекс дня покупки и индекс дня продажи или пустой массив.
+   
+   Например:
+   * ``` profit([13, 6, 3, 4, 10, 2, 3])    #=> [2, 4] ```
+   * ``` profit([13, 6, 3, 1])   #=> [] ```
