@@ -85,3 +85,7 @@
 [RoR: Приложение для управления поликлиникой](clinic_management_system.md)
 
 [RoR: Приложение для построения небольшого сайта с иерархией страниц](app_with_page_hierarchy.md)
+
+[RoR: Приложение для сокращения ссылок](url_shortener_app.md)
+
+[Grape + Ruby\/RoR: Приложения для импорта маркетов валют](grape_markets_list_app.md)
