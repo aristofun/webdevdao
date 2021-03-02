@@ -20,6 +20,8 @@
 
 [Ruby + JSON RESTful API: приложение с объявлениями о работе](job_advertisement_site.md)
 
+[Ruby + JSON API: сервис без использования Ruby on Rails](json_api_service_without_rails.md)
+
 [RoR: JSON API с экшенами для блога](json_api_for_blog.md)
 
 [RoR: API для обменника валют](currency_exchange_rails_api.md)
