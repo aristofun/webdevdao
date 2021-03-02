@@ -26,6 +26,8 @@
 
 [JSON API: прототип для системы бронирования авто](prototype_for_car_hiring_system.md)
 
+[JSON API: учет посещенных ссылок](ror_api_reference_counting.md)
+
 [RoR: meals delivery service](meals_delivery_service.md)
 
 [RoR: выгрузка тестового прайс-листа и создание карточек для онлайн-магазина](price_list_export_algorithms_for_marketplace.md)
