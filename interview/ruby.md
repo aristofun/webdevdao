@@ -483,6 +483,45 @@
 
 1. Что такое `super`-методы и как они работают/где применяются?
 
+    <details>
+      <summary>Ответ</summary>
+      `super` - ключевое слово, вызывает из родительского класса метод с аналогичным названием, что и метод вызывающий `super`. Применяется при переопределинии методов в дочерних классах.
+
+      ```
+        class Text
+          def initialize(body:)
+            @body = body
+          end
+        end
+
+        class Note < Text
+          def initialize(body:)
+            super
+            @date = Time.now
+          end
+        end
+
+        # Если количество параметров в методе родительского и дочернего классов не совпадает
+        # можно явно задать аргументы ключевому слову super
+        class Article < Text
+          def initialize(body:, title:)
+            super(body: body) # Явное задание количества аргументов для  super
+            @title = title
+          end
+        end
+
+        text = Text.new(body: 'Просто текст')
+        note = Note.new(body: 'Заметка')
+        article = Article.new(title: 'Статья', body: 'Текст статьи')
+
+        p text      #<Text:0x0000559cc64f3590 @body="Просто текст">
+        p note      #<Note:0x0000559cc64f32e8 @body="Заметка", @date=2021-05-05 21:58:38.829037856 +0500>
+        p article   #<Article:0x0000559cc64f2e60 @body="Текст статьи", @title="Статья">
+
+      ```
+    </details>
+
+
 1. Что такое модуль в ruby? Какая разница между классом и модулем?
 
     <details>
