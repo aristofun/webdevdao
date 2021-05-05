@@ -361,13 +361,13 @@
 1. Чем Like отличается от Ilike?
 1. Чем Having отличается от Where?
 	
-	<details>
-		<summary>Ответ</summary>
-		`Where` фильтрует строки.
-		
-		`Having` фильтрует группы (например, сначала группировка с применением `Group by`, а затем уже выборка по условию с применением `Having`).
-		Пример можно посмотреть здесь: http://sql-tutorial.ru/ru/book_having_clause.html
-	</details>
+    <details>
+      <summary>Ответ</summary>
+      `Where` фильтрует строки.
+      
+      `Having` фильтрует группы (например, сначала группировка с применением `Group by`, а затем уже выборка по условию с применением `Having`).
+      Пример можно посмотреть здесь: http://sql-tutorial.ru/ru/book_having_clause.html
+    </details>
 
 1. Что такое нормализация и денормализация базы данных?
 
