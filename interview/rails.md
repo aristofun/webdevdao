@@ -538,6 +538,7 @@
       
       [Rails docs en](https://guides.rubyonrails.org/caching_with_rails.html)     
     </details>
+1. ActiveRecord Query Interface - интерфейс запросов активрекорд. Для чего используется? Перечислите методы.
 
 1. Представьте, что есть огромная табл. `users`. Как можно перебрать ее элементы максимально быстро?
 

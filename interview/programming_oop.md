@@ -240,7 +240,7 @@
 
       http://eax.me/rest/
     </details>
-
+   
 1. Что такое CRUD?
 
     <details>
@@ -259,6 +259,10 @@
       * PATCH/PUT 	`/photos/:id` 	`photos#update` 	обновляет определенное фото
       * DELETE 	`/photos/:id` 	`photos#destroy` 	удаляет определенное фото
     </details>
+
+1. Что такое CRUDL?
+
+1. Что такое RESTfull API?
 
 1. Правила построения REST API.
 
