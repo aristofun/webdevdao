@@ -93,3 +93,5 @@
 [RoR: Приложение для сокращения ссылок](url_shortener_app.md)
 
 [Grape + Ruby\/RoR: Приложения для импорта маркетов валют](grape_markets_list_app.md)
+
+[ROR6 + Grape: API для статистики по погоде](weather_statistics_api.md)
