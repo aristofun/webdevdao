@@ -329,7 +329,7 @@
       * Репликация Master-Slave;
       * Репликация Master-Master.
       
-      https://ruhighload.com/Репликация+данных
+      https://highload.today/replikatsiya-dannykh/
       
     </details>
 
@@ -351,7 +351,7 @@
       Горизонтальный шардинг — это разделение одной таблицы на разные сервера. 
       Это необходимо использовать для огромных таблиц, которые не умещаются на одном сервере.
       
-      https://ruhighload.com/Шардинг+и+репликация
+      https://highload.today/sharding-i-replikatsiya/
       
     </details>
 
