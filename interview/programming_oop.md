@@ -449,7 +449,7 @@
 
     <details>
       <summary>Ответ</summary>
-      Object Relational Mapper.
+      Object Relational Mapping.
 
       Это набор классов, которые предоставляют объектно-ориентированный интерфейс для базы данных.
 
