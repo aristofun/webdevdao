@@ -48,7 +48,7 @@ https://www.ozon.ru/context/detail/id/135726580/
 Нужны азы работы с базой данных, к примеру sql либо postgres. В зависимости от работы и написания разных автотестов, рубисты немного халявят, так как у нас есть очень удобный ActiveRecord. Неплохой вводный и бесплатный курс - https://www.youtube.com/watch?v=yOkj-PbCPQ8&list=PLDywto_IU4_4RU0sKfID6OY-np6uGmhlf
 
 Есть канал тестирования, Михаила Портнова и Энди Кей. 
-Михаила Портнова ооооочень хорошо дает теорию, но долго - https://www.portnov.com/ru и https://www.youtube.com/watch?v=9ecKqmeb9eA&list=PL_CSTk3_YGZ8i3h8yai0Lp5yrtQ8ga92G
+Михаил Портнов ооооочень хорошо дает теорию, но долго - https://www.portnov.com/ru и https://www.youtube.com/watch?v=9ecKqmeb9eA&list=PL_CSTk3_YGZ8i3h8yai0Lp5yrtQ8ga92G
 Энди Кей, в своих коротких видео на 5-7, хорошо раскрывает суть тестирования, простыми словами https://www.youtube.com/watch?v=jtEicidgRnM&list=PLN3rAY_-pdQafsbDsX4klNwwzh2IxTyok
 
 Полезные ( Но платные ) курсы уже от ребят Learnqa: https://www.learnqa.ru/#courses
