@@ -752,5 +752,5 @@
     <details>
       <summary>Ответ</summary>
       Метод `sort` использует алгоритм быстрой сортировки.
-    <details>
+    </details>
 
